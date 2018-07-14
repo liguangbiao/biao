@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <script src="js/vue.js"></script>
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/bottom-nav.css">
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+    <script src="http://mockjs.com/dist/mock.js"></script>
+</head>
+<body>
+<div id="search">
+    <label><img src="images/search.png"> <input placeholder="可输入商品号...等等"></label>
+    <a><img src="images/scan.png"></a>
+</div>
+<div id="banner" :style="{backgroundImage:'url('+ now +')'}"
+                 @touchstart="handletouchstart()"
+                 @touchend="handletouchend()">
+    <div>
+        <a
+                v-for="(item,index) in backgroundimageurls"
+                class="bannernoactive"
+                :class="{'banneractive':index === isActive}"
+                @click="changecount(index)"></a>
+    </div>
+</div>
+<div id="main">
+    <div class="maintop">
+        <topselect v-for="item in selectlist" :item="item"></topselect>
+    </div>
+    <index-kind
+            v-for="item in kindnames"
+            :kindnames="kindnames"
+            :item="item">
+    </index-kind>
+</div>
+<div id="bottom-nav">
+    <div class="bottom-wrap">
+        <bottom v-for="(item,index) in hrefs"
+                :isactive="isactive"
+                :item="item"
+                @parentchange="parentchange"
+                :index="index">
+        </bottom>
+    </div>
+</div>
+</body>
+<script src="js/index.js"></script>
+<script src="js/bottom-nav.js"></script>
+</html>

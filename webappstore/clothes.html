@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <script src="js/vue.js"></script>
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/clothes.css">
+    <script src="http://mockjs.com/dist/mock.js"></script>
+</head>
+<body>
+<div id="wrap">
+    <div id="header">
+        <ul>
+            <li v-for="(item,index) in select">
+                <a
+                    class="headnormal"
+                    :class="{headeractive:index === isactive}"
+                    @click="change(index)">{{item}}
+                    <img src="images/xu.png" :class="{hide:index === isactive}">
+                    <img src="images/down.png"
+                         class="addsort"
+                         :class="{hide:!(index === isactive),up:sort[index]}">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div id="content">
+        <clothes-list v-for="item in clothes" :item="item" :style="{order:item.order}"></clothes-list>
+    </div>
+</div>
+<div id="bottom-nav">
+    <div class="bottom-wrap">
+        <bottom v-for="(item,index) in hrefs"
+                :isactive="isactive"
+                :item="item"
+                @parentchange="parentchange"
+                :index="index">
+        </bottom>
+    </div>
+</div>
+</body>
+<script src="js/clothes.js"></script>
+<script src="js/bottom-nav.js"></script>
+</html>

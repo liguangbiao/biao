@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <script src="js/vue.js"></script>
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/layer-m.css">
+    <link type="text/css" rel="stylesheet" href="css/header.css">
+    <link type="text/css" rel="stylesheet" href="css/clothesdetails.css">
+    <script src="js/layer-m.js"></script>
+    <script src="http://mockjs.com/dist/mock.js"></script>
+</head>
+<body>
+<div id="wrap">
+    <div id="header">商品详情</div>
+    <div id="content">
+        <div class="photo"
+             @touchstart="handletouchstart()"
+             @touchend="handletouchend()"
+        >
+            <div :style="{width:width+'%',marginLeft:marginLeft+'%'}">
+                <div v-for="item in src" :style="{width:widths+'%'}">
+                    <img  :src="item">
+                </div>
+            </div>
+            <p>
+                <a
+                        class="bannernoactive"
+                        v-for="(item,index) in src"
+                        :class="{'banneractive':index === isActive}">
+
+                </a>
+            </p>
+        </div>
+        <div class="dis">
+            <img src="images/laba.png">
+            <span>点击分享立得优惠！</span>
+        </div>
+        <div class="details">
+            <p><span>￥{{price}}<s>￥{{price}}</s></span>
+            </p>
+            <span>{{intro}}</span>
+            <div>
+                </div>
+                <div class="size">
+                    <span>尺码</span>
+                    <ul>
+                        <select-size v-for="(item,index) in size"
+                                     :choosesize="choosesize"
+                                     :item="item"
+                                     :index="index"
+                                     @actsize="actsize(index)"></select-size>
+                    </ul>
+                </div>
+                <div class="size">
+                    <span>颜色</span>
+                    <ul>
+                        <select-color
+                                v-for="(item,index) in color"
+                                :choosecolor="choosecolor"
+                                :item="item"
+                                :index="index"
+                                @actcolor="actcolor(index)"></select-color>
+                    </ul>
+                </div>
+            </div>
+            <div class="message">
+                <span>商品介绍</span>
+                <p><span>产地:</span><span>{{message.origin}}</span></p>
+                <p><span>实用场合:</span><span>{{message.place}}</span></p>
+                <p><span>面料:</span><span>{{message.fabric}}</span></p>
+                <p><span>适用人群:</span><span>{{message.people}}</span></p>
+                <p><span>材质:</span><span>{{message.material}}</span></p>
+                <p><span>洗涤说明:</span><span>{{message.wash}}</span></p>
+                <p><span>商品编号:</span><span>{{message.serial}}</span></p>
+                <span>图文详情</span>
+                <img v-for="(item,index) in message.images" :src="message.images[index]">
+                <p>--已经到底了，再往上逛逛吧--</p>
+            </div>
+        </div>
+    <div id="add">
+        <a href="car.html"><img src="images/car.png"><span :class="{car:carCount >= 1}">{{carCount}}</span></a>
+        <a href="javascript:" @click="addcarcount">加入购物车</a>
+    </div>
+</div>
+<div id="subnav">
+    <div class="nav" :class="{navchange:!isActive}">
+        <a href="javascript:" :class="{show:isActive}" @click="change"><img src="images/top.png">导航</a>
+        <a href="index.html"><img src="images/index.png">首页</a>
+        <a href="kind.html"><img src="images/kind.png">分类</a>
+        <a href="car.html"><img src="images/car1.png">购物车</a>
+        <a href="user.html"><img src="images/user.png">个人</a>
+        <a href="javascript:" @click="change"><span>×</span></a>
+    </div>
+</div>
+</body>
+<script src="js/clothesdetails.js"></script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+    <script src="js/vue.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/layer-m.css">
+    <link type="text/css" rel="stylesheet" href="css/header.css">
+    <link type="text/css" rel="stylesheet" href="css/user1.css">
+    <script src="js/layer-m.js"></script>
+    <script src="http://mockjs.com/dist/mock.js"></script>
+
+</head>
+<body>
+<div id="header">个人中心</div>
+<div id="content">
+    <div class="maintop">
+        <a href="javascript:">
+            <img :src="head">
+            <span>{{name}}</span>
+        </a>
+    </div>
+    <div class="main">
+        <a href="waitpay.html">
+            <img src="images/nopay.png">
+            <span>待付款</span>
+        </a>
+        <div></div>
+        <a href="waitget.html">
+            <img src="images/wait.png">
+            <span>待收货</span>
+        </a>
+        <div></div>
+        <a href="allwait.html">
+            <img src="images/all.png">
+            <span>全部订单</span>
+        </a>
+    </div>
+    <div class="menu">
+        <a href="javascript:"><span>账户余额</span><div><span>{{money}}</span><img src="images/right.png"> </div></a>
+        <a href="address.html"><span>收货地址</span><div><span>{{address}}</span><img src="images/right.png"> </div></a>
+        <a href="integral.html"><span>购物积分</span><div><span>{{integral}}</span><img src="images/right.png"> </div></a>
+        <a href="javascript:"><span>有待开发</span><div><img src="images/right.png"> </div></a>
+    </div>
+</div>
+<div id="bottom-nav">
+    <div class="bottom-wrap">
+        <bottom v-for="(item,index) in hrefs"
+                :isactive="isactive"
+                :item="item"
+                @parentchange="parentchange"
+                :index="index">
+        </bottom>
+    </div>
+</div>
+</body>
+<script src="js/user1.js"></script>
+<script src="js/bottom-nav.js"></script>
+</html>

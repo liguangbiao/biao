@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <script src="js/vue.js"></script>
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/layer-m.css">
+    <script src="js/layer-m.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/header.css">
+    <link type="text/css" rel="stylesheet" href="css/address.css">
+    <script src="http://mockjs.com/dist/mock.js"></script>
+</head>
+<body>
+<div id="header">收货地址</div>
+<div id="main">
+    <div
+            class="address"
+            v-for="(item,index) in addresses"
+            :class="{addborder: isactive===index}"
+            @click="change(index)"
+            :index="index">
+        <div>
+            <span>{{item.name}}</span>
+            <span>{{item.phone}}</span>
+            <p>{{item.address}}</p>
+        </div>
+        <div class="del">
+            <a @click="remove(index)">删除</a>
+            <div></div>
+            <a @click="toeditor">编辑</a>
+        </div>
+    </div>
+    <div class="add">
+        <a href="user1.html" :class="{hide:total === 0}">设为默认地址</a>
+        <a href="addaddress1.html" :class="{fc:total === 0}">添加新地址</a>
+    </div>
+</div>
+<div id="subnav">
+    <div class="nav" :class="{navchange:!isActive}">
+        <a href="javascript:" :class="{show:isActive}" @click="change"><img src="images/top.png">导航</a>
+        <a href="index.html"><img src="images/index.png">首页</a>
+        <a href="kind.html"><img src="images/kind.png">分类</a>
+        <a href="car.html"><img src="images/car1.png">购物车</a>
+        <a href="user1.html"><img src="images/user.png">个人</a>
+        <a href="javascript:" @click="change"><span>×</span></a>
+    </div>
+</div>
+</body>
+<script src="js/address.js"></script>
+</html>

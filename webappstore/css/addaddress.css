@@ -1,0 +1,121 @@
+#content{
+    width: 100%;
+    padding-top: 4rem;
+}
+.flex{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 1.2rem 0.8rem;
+    box-sizing: border-box;
+    border-bottom: #f0f0ea 1px solid;
+    align-items: center;
+    font-size: 1.1rem;
+}
+.flex>div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex>div:first-child>img{
+    width: 3rem;
+    height: 3rem;
+    margin: auto;
+}
+.flex>div:last-child{
+    width: 1.2rem;
+    height: 1.2rem;
+    border: #c6c6c0 1px solid;
+    border-radius: 0.8rem;
+}
+.noactive{
+    width:100%;
+    height: 100%;
+    transform: scale(1.45);
+    opacity: 0;
+}
+.active{
+    opacity: 1;
+}
+.flex>input{
+    width: 60%;
+    text-align: right;
+    padding: 0.2rem 1rem;
+    font-size: 1.1rem;
+}
+.flex>input::placeholder{
+    color: #cdcdcd;
+    font-size: 1.1rem;
+}
+.flex>div>p{
+    margin: 0 0.4rem;
+    font-size: 0.9rem;
+    color: #40403e;
+    line-height: 1.2rem;
+}
+.flex>div>p>span{
+    display: block;
+    font-size: 0.8rem;
+    color: #c6c6c0;
+}
+.foot{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #ff7d00;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+}
+.foot>a{
+    width: 100%;
+    height: 100%;
+    padding: 0.8rem 1rem;
+    box-sizing: border-box;
+    display: block;
+    color: white;
+    letter-spacing: 0.2rem;
+    font-size: 1.3rem;
+}
+.nav{
+    background-color: #f9f9f9;
+    height: 15rem;
+    width: 3rem;
+    position: fixed;
+    right: 0.8rem;
+    bottom: 4.5rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    padding: 1rem 0 0 0;
+}
+.navchange{
+    height: 3rem;
+    padding: 0;
+}
+.nav>a{
+    box-sizing: border-box;
+    padding: 0.3rem;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #999999;
+}
+.nav>a>img{
+    width: 1rem;
+    height: 1rem;
+    display: block;
+    opacity: 0.8;
+    filter: grayscale(1);
+}
+.nav>a>span{
+    display: block;
+    margin:auto;
+    font-size: 2rem;
+}
+.show{
+    position: absolute;
+    left: -999rem;
+}

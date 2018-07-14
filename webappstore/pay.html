@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <script src="js/vue.js"></script>
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/layer-m.css">
+    <link type="text/css" rel="stylesheet" href="css/header.css">
+    <link type="text/css" rel="stylesheet" href="css/pay.css">
+    <script src="js/layer-m.js"></script>
+    <script src="http://mockjs.com/dist/mock.js"></script>
+</head>
+<body>
+<div id="header">支付收银台</div>
+<div id="content">
+    <div class="flex">
+        <span>订单编号</span>
+        <span>{{ordernum}}</span>
+    </div>
+    <div class="flex">
+        <span>支付金额</span>
+        <span>￥{{price}}</span>
+    </div>
+    <div class="flex" onclick="location='setaddress.html'">
+        <span>设置收货地址:</span>
+        <span>{{address}}</span>
+    </div>
+    <div class="flex">
+        <span>选择支付方式：</span>
+    </div>
+    <a href="javascript:" class="flex" @click="choose(1)">
+        <div>
+            <img src="images/vxlogo.jpg">
+            <p>微信支付<span>推荐微信用户使用</span></p>
+        </div>
+        <div><img src="images/choose.png" class="noactive" :class="{active:1===count}"></div>
+    </a>
+    <a href="javascript:" class="flex"  @click="choose(2)">
+        <div>
+            <img src="images/zfblogo.png">
+            <p>微信支付<span>推荐微信用户使用</span></p>
+        </div>
+        <div><img src="images/choose.png" class="noactive" :class="{active:2===count}"></div>
+    </a>
+    <div class="foot">
+        <a @click="checkpay">确认支付</a>
+    </div>
+</div>
+<div id="subnav">
+    <div class="nav" :class="{navchange:!isActive}">
+        <a href="javascript:" :class="{show:isActive}" @click="change"><img src="images/top.png">导航</a>
+        <a href="index.html"><img src="images/index.png">首页</a>
+        <a href="kind.html"><img src="images/kind.png">分类</a>
+        <a href="car.html"><img src="images/car1.png">购物车</a>
+        <a href="user.html"><img src="images/user.png">个人</a>
+        <a href="javascript:" @click="change"><span>×</span></a>
+    </div>
+</div>
+</body>
+<script src="js/pay.js"></script>
+</html>

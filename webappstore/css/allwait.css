@@ -1,0 +1,74 @@
+.list{
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+.list>a{
+    padding: 0 0 0.8rem 0.5rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: #daddd7 1px dashed;
+    margin-bottom: 1.2rem;
+    transition: margin-left 0.2s;
+}
+.list>a>img{
+    width: 20%;
+    height: 4rem;
+}
+.list>a>p{
+    width: 60%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 1rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.list>a>p>span:first-child{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: 0.9rem;
+    color: #484947;
+}
+.list>a>p>span:last-child{
+    font-size: 0.7rem;
+    color: #9a9c98;
+}
+.list>a>div{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1rem;
+    align-items: center;
+}
+.list>a>div>span:first-child{
+    color: #ff7d00;
+}
+.list>a>div>span:last-child{
+    color: #e60012;
+}
+.del{
+    width: 15%;
+    height: 4rem;
+    background-color: #e60012;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    color: black;
+    padding: 0 0.2rem;
+    box-sizing: border-box;
+    display: none;
+}
+.waitpayactive{
+    width: 116%;
+    margin-left: -17%;
+}
+.delactive{
+    display: block;
+}

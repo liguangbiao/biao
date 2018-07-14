@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <script src="js/vue.js"></script>
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/layer-m.css">
+    <script src="js/layer-m.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/header.css">
+    <link type="text/css" rel="stylesheet" href="css/bottom-nav.css">
+    <link type="text/css" rel="stylesheet" href="css/integral.css">
+    <script src="http://mockjs.com/dist/mock.js"></script>
+
+</head>
+<body>
+<div id="header">积分商城</div>
+<div id="main">
+    <div class="maintop">
+        <span>推荐</span>
+        <span>当前积分:<em>{{integral}}</em></span>
+    </div>
+    <div class="content">
+        <div class="list">
+            <div><span>￥5</span><span>代金券</span></div>
+            <div>
+                <span>购满50元立减5元</span>
+                <div>所需积分:50</div>
+            </div>
+            <a>兑换</a>
+        </div>
+        <div class="list">
+            <div><span>￥10</span><span>代金券</span></div>
+            <div>
+                <span>购满200元立减10元</span>
+                <div>所需积分:100</div>
+            </div>
+            <a>兑换</a>
+        </div>
+        <div class="list">
+            <div><span>￥50</span><span>代金券</span></div>
+            <div>
+                <span>购满500元立减50元</span>
+                <div>所需积分:1000</div>
+            </div>
+            <a>兑换</a>
+        </div>
+    </div>
+    <a href="javascript" class="btn"><<查看卡包</a>
+</div>
+<div id="bottom-nav">
+    <div class="bottom-wrap">
+        <bottom v-for="(item,index) in hrefs"
+                :isactive="isactive"
+                :item="item"
+                @parentchange="parentchange"
+                :index="index">
+        </bottom>
+    </div>
+</div>
+</body>
+<script src="js/integral.js"></script>
+<script src="js/bottom-nav.js"></script>
+</html>

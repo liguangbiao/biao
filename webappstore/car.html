@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <script src="js/vue.js"></script>
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/layer-m.css">
+    <script src="js/layer-m.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/header.css">
+    <link type="text/css" rel="stylesheet" href="css/car.css">
+    <script src="http://mockjs.com/dist/mock.js"></script>
+</head>
+<body>
+<div id="header">购物车</div>
+<div id="wrap">
+<div id="content">
+    <div class="empty" :class="{show:total > 0}">
+        <img src="images/empty.png">
+        <span>购物车竟然空空如也</span>
+        <a href="kind.html">对自己好点，点击这里买买买</a>
+    </div>
+    <add-clothes
+            v-for="(item,index) in selectclothes"
+            :item="item"
+            :index="index"
+            @addone="addone"
+            @minusone="minusone" @removeclothes="removeclothes"></add-clothes>
+</div>
+<div id="footer">
+    <p>总金额：<span>￥{{total}}</span></p>
+    <div><a @click="pay">结算</a></div>
+</div>
+</div>
+<div id="subnav">
+    <div class="nav" :class="{navchange:!isActive}">
+        <a href="javascript:" :class="{show:isActive}" @click="change"><img src="images/top.png">导航</a>
+        <a href="index.html"><img src="images/index.png">首页</a>
+        <a href="kind.html"><img src="images/kind.png">分类</a>
+        <a href="car.html"><img src="images/car1.png">购物车</a>
+        <a href="user.html"><img src="images/user.png">个人</a>
+        <a href="javascript:" @click="change"><span>×</span></a>
+    </div>
+</div>
+</body>
+<script src="js/car.js"></script>
+</html>

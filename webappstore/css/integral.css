@@ -1,0 +1,81 @@
+#main{
+    width: 100%;
+    padding-top: 4rem;
+    box-sizing: border-box;
+    margin-bottom: 4rem;
+}
+.maintop{
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    height: 3rem;
+    padding: 0 1rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8fcf6;
+}
+em{
+    font-size: 1.2rem;
+    color: #e60012;
+    margin: 0 0.5rem;
+}
+.content{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 0.8rem;
+    margin: 0.5rem 0;
+    background-color: #f6f6f6;
+}
+.list{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+    border-bottom: #cdcdcd 1px solid;
+}
+.list>div:first-child{
+    width: 5rem;
+    height: 5rem;
+    background-color: #ff7d00;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    flex: none;
+}
+.list>div:first-child>span:first-child{
+    font-size: 1.8rem;
+}
+.list>div:first-child>span:last-child{
+    font-size: 1rem;
+}
+.list>div:nth-child(2) {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.list>div:nth-child(2)>span:first-child{
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+.list>div:nth-child(2)>div{
+    font-size: 0.9rem;
+    color: #636562;
+}
+.list>a{
+    box-sizing: border-box;
+    background-color: #e60012;
+    padding: 0.5rem 0.8rem;
+    line-height: 2rem;
+}
+.btn{
+    display: block;
+    text-decoration: underline;
+    color: blue;
+    margin: 1.8rem;
+}

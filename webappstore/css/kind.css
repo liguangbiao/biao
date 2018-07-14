@@ -1,0 +1,118 @@
+#sidebar{
+    width: 100%;
+    border-top: #cdcdcd 1px solid;
+}
+.nav{
+    width: 22%;
+    overflow: scroll;
+    background-color: #eaeaea;
+    margin-top: 4rem;
+    display: block;
+}
+.nav>li{
+    width: 100%;
+}
+.nav>li>a{
+    width: 100%;
+    text-align: center;
+    /*height: 3rem;*/
+    display: block;
+    font-size: 0.9rem;
+    padding: 0.7rem 0;
+    box-sizing: border-box;
+    color: #585858;
+}
+.navactive{
+    background-color: white;
+    border-left: #ff7d00 0.1rem solid;
+}
+.second-nav{
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 75%;
+    padding: 4rem 0 4rem 1rem;
+    overflow: scroll;
+}
+.second-nav>div{
+    margin-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: #cdcdcd 1px solid;
+}
+.inside-nav{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    /*justify-content: space-around;*/
+}
+.inside-nav>li{
+    width: 33%;
+    padding: 0.8rem 0;
+}
+.inside-nav>li>a{
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+.inside-nav>li>a>img{
+    width: 70%;
+    height: 4rem;
+    transform: scale(0.9);
+}
+.inside-nav>li>a>span{
+    font-size: 0.6rem;
+    display: block;
+}
+.second-nav>div>span{
+    width: 100%;
+    display: block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #ff7d00;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+}
+#bottom-nav{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+}
+.bottom-wrap{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height:4rem;
+    align-items: center;
+}
+.bottom-wrap>a{
+    width: 4rem;
+    height: 3.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 3.9rem;
+    box-sizing: border-box;
+    text-align: center;
+}
+.nocolor{
+    font-size: 0.8rem;
+    color: #6f6f6f;
+    letter-spacing: 0.2rem;
+    line-height: 0.4rem;
+}
+.addborder{
+    border-bottom: #ff7d00 0.2rem solid;
+}
+.addcolor{
+    color: #ff7d00;
+}
+.normal{
+    width: 75%;
+    height:3rem;
+    filter: grayscale(1);
+    transform: scale(0.7);
+}
+.changecolor{
+    filter: grayscale(0);
+}

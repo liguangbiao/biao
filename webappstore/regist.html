@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+    <script src="js/vue.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/layer-m.css">
+    <link type="text/css" rel="stylesheet" href="css/header.css">
+    <script src="js/layer-m.js"></script>
+</head>
+<style>
+    body{
+        background-color: #ff7d00;
+    }
+    #main{
+        width: 100%;
+        display: flex;
+    }
+    .content {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .content>input{
+        width: 90%;
+        height: 3.2rem;
+        background-color:white;
+        padding: 0.2rem 1rem;
+        font-size: 1.2rem;
+        margin: 0.5rem 0;
+        border-radius: 0.4rem;
+        box-sizing: border-box;
+    }
+    .content>input::placeholder{
+        font-size: 1.1rem;
+        color: #ff7d00;
+        opacity: 0.9;
+        letter-spacing: 0.1rem;
+        font-family: 楷体;
+    }
+    .content>a{
+        display: block;
+        width:90%;
+        height: 3rem;
+        text-align: center;
+        line-height: 3rem;
+        margin: 0.5rem 0;
+        background-color: #e60012;
+        font-size: 1.2rem;
+        letter-spacing: 0.5rem;
+        color: black;
+    }
+    .jump{
+        width: 100%;
+        display: flex;
+        padding: 1rem 1.2rem;
+        box-sizing: border-box;
+        justify-content: space-between;
+    }
+    .jump>a{
+        color: #6b6c68;
+        text-decoration: underline;
+        font-size: 0.9rem;
+    }
+    .nav{
+        background-color: #f9f9f9;
+        height: 15rem;
+        width: 3rem;
+        position: fixed;
+        right: 0.8rem;
+        bottom: 4.5rem;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        padding: 1rem 0 0 0;
+    }
+    .navchange{
+        height: 3rem;
+        padding: 0;
+    }
+    .nav>a{
+        box-sizing: border-box;
+        padding: 0.3rem;
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.8rem;
+        color: #999999;
+    }
+    .nav>a>img{
+        width: 1rem;
+        height: 1rem;
+        display: block;
+        opacity: 0.8;
+        filter: grayscale(1);
+    }
+    .nav>a>span{
+        display: block;
+        margin:auto;
+        font-size: 2rem;
+    }
+    .show{
+        position: absolute;
+        left: -999rem;
+    }
+    .empty{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #4c4c4c;
+    }
+    .empty>img{
+        width: 6rem;
+        height: 6rem;
+        filter: grayscale(1);margin: 1rem 0;
+    }
+    .empty>a{
+        color: #ff7d00;
+        margin: 0.5rem 0;
+    }
+    .show{
+        display: none;
+    }
+</style>
+<body>
+<div id="header">注册</div>
+<div id="main">
+    <div class="content">
+        <input placeholder="请输入你注册的用户名">
+        <input placeholder="请输入你注册的密码">
+        <a href="user1.html">注册</a>
+        <div class="jump">
+            <a href="login.html"><< 返回登录</a>
+            <a href="javascript:"></a>
+        </div>
+    </div>
+</div>
+<div id="subnav">
+    <div class="nav" :class="{navchange:!isActive}">
+        <a href="javascript:" :class="{show:isActive}" @click="change"><img src="images/top.png">导航</a>
+        <a href="index.html"><img src="images/index.png">首页</a>
+        <a href="kind.html"><img src="images/kind.png">分类</a>
+        <a href="car.html"><img src="images/car1.png">购物车</a>
+        <a href="user.html"><img src="images/user.png">个人</a>
+        <a href="javascript:" @click="change"><span>×</span></a>
+    </div>
+</div>
+</body>
+<script>
+    var wheight=document.documentElement.clientHeight;
+    $("#main").css("height",wheight);
+    new Vue({
+        el:"#subnav",
+        data:{
+            isActive:false
+        },
+        methods:{
+            change:function () {
+                this.isActive=!this.isActive
+            }
+        }
+    })
+</script>
+</html>

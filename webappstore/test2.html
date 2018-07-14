@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test2</title>
+    <script src="js/vue.js"></script>
+    <script src="js/vue-router.js"></script>
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+    <script type="module" src="js/test2.js"></script>
+</head>
+<style>
+    #xxx{
+        width: 100%;
+        height: 600px;
+        background-color: #ff7d00;
+    }
+</style>
+<body>
+<div id="xxx">
+</div>
+</body>
+<script>
+    var dom = document.getElementById('xxx');
+    var startX;
+    var startY;
+    dom.addEventListener("touchstart",function(e){
+        startX = e.changedTouches[0].pageX;
+        startY = e.changedTouches[0].pageY;
+    });
+    dom.addEventListener("touchend",function(e){
+        var endX = e.changedTouches[0].pageX;
+        var endY = e.changedTouches[0].pageY;
+        var distanceX  = endX - startX;
+        var distanceY = endY - startY;
+        if(Math.abs(distanceX) > Math.abs(distanceY) && distanceX > 50){
+            console.log('往右滑动');
+        }else if(Math.abs(distanceX) > Math.abs(distanceY) && distanceX < -50){
+            console.log('往左滑动');
+        }else if(Math.abs(distanceX) < Math.abs(distanceY) && distanceY < -50){
+            console.log('往上滑动');
+        }else if(Math.abs(distanceX) < Math.abs(distanceY) && distanceY > 50){
+            console.log('往下滑动');
+        }
+    });
+    // var u=window.location.search.substr(1).split("&");
+    // var data=new Array();
+    // for (var n=0;n<u.length;n++){
+    //     var i=u[n].split("=");
+    //     data[i[0]]=i[1];
+    //     console.log(data);
+    // }
+    var aa=555;
+    localStorage.setItem("name",aa);
+    console.log(localStorage.getItem("name"));
+    localStorage.removeItem("name");
+
+</script>
+</html>

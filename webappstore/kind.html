@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <script src="js/vue.js"></script>
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+    <script src="js/vue-router.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/header.css">
+    <link type="text/css" rel="stylesheet" href="css/kind.css">
+    <script src="http://mockjs.com/dist/mock.js"></script>
+</head>
+<body>
+<div id="header">商品分类</div>
+<div id="wrap">
+    <div id="sidebar">
+        <ul class="nav">
+        <!--<li><router-link to="/page1 在这里传参"></router-link></li>-->
+            <firstnav v-for="(firstname,index) in pages" :firstname="firstname" :isactive="isactive" :index="index" @actsave="save(index)"></firstnav>
+        </ul>
+    </div>
+    <div id="content" class="second-nav">
+    <!--这里两个方法渲染右侧种类数据：一是直接渲染 二是改变路由参数-->
+    <!--<router-view v-for="item in pages[??].secondnames" :item="item"></router-view>-->
+        <second-nav v-for="item in pages[pagenum].secondnames" :item="item"></second-nav>
+    </div>
+</div>
+<div id="bottom-nav">
+    <div class="bottom-wrap">
+        <bottom v-for="(item,index) in hrefs"
+                :isactive="isactive"
+                :item="item"
+                @parentchange="parentchange"
+                :index="index">
+        </bottom>
+    </div>
+</div>
+</body>
+<script src="js/kind.js"></script>
+<script src="js/bottom-nav.js"></script>
+</html>

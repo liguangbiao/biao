@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <script src="js/vue.js"></script>
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/layer-m.css">
+    <link type="text/css" rel="stylesheet" href="css/header.css">
+    <link type="text/css" rel="stylesheet" href="css/addaddress1.css">
+    <script src="js/layer-m.js"></script>
+</head>
+<body>
+<div id="header">新增收货地址</div>
+<div id="content">
+    <div class="flex">
+        <span>收货人</span>
+        <input placeholder="姓名">
+    </div>
+    <div class="flex">
+        <span>联系电话</span>
+        <input placeholder="手机或固话">
+    </div>
+    <div class="flex">
+        <span>详细地址</span>
+        <input placeholder="街道门牌信息">
+    </div>
+    <div class="flex">
+        <span>邮政编码</span>
+        <input placeholder="邮政编码">
+    </div>
+    <div class="foot">
+        <a @click="checkpay" href="address.html">确认添加</a>
+    </div>
+</div>
+<div id="subnav">
+    <div class="nav" :class="{navchange:!isActive}">
+        <a href="javascript:" :class="{show:isActive}" @click="change"><img src="images/top.png">导航</a>
+        <a href="index.html"><img src="images/index.png">首页</a>
+        <a href="kind.html"><img src="images/kind.png">分类</a>
+        <a href="car.html"><img src="images/car1.png">购物车</a>
+        <a href="user.html"><img src="images/user.png">个人</a>
+        <a href="javascript:" @click="change"><span>×</span></a>
+    </div>
+</div>
+</body>
+<script>
+    new Vue({
+        el:"#subnav",
+        data:{
+            isActive:false
+        },
+        methods:{
+            change:function () {
+                this.isActive=!this.isActive
+            }
+        }
+    })
+</script>
+</html>
