@@ -1,0 +1,40 @@
+Flex项目排列：
+项目方向 flex-direction 水平row 方向+reverse  垂直column 方向+reverse
+项目换行 默认是不换行，等比缩放 flex-wrap 换行wrap 不换行nowrap  
+                                          第一行在下方往上换行 wrap-reverse
+ 以上两个属性写一起，flex-flow:<flex-direction>||<flex-wrap> 两个值  
+
+项目(整体）在水平方向排列布局   justify-content
+                        左对齐：flex-start  右对齐：flex-end  居中：center
+                        两端靠，中间间距相等：space-between 
+                        项目间距一样，不靠边 space-around 
+
+项目（整体）在垂直方向对齐   align-content
+                            默认水平垂直都占满:stretch   全部项目垂直居中：center
+                           全部项目放在顶部:flex-start  全部项目放在底部：flex-end
+                  顶部底部两边靠，间距相等：space-between  
+                 项目间距相等，不靠边:space-around
+                         
+项目(单行的布局）在垂直方向排列布局   align-items
+                        顶部对齐：flex-start  底部对齐：flex-end
+                        垂直居中;center     拉伸占满：stretch
+                        项目第一行文字基线对齐：baseline
+
+
+项目属性：order 数值越少排前面
+          flex-grow放大 默认是0不放  1放大一倍
+          flex-shrink缩小  默认是1缩小   0不缩小
+          flex-basis  设置宽高或者是auto自动伸缩
+          flex  上三个写一起：两个快捷 auto (1 1 auto) 放大缩小自动
+                                       none（0 0 auto）不放大不缩小
+           align-self:独立出来设置对齐方式
+
+
+
+
+                         
+                        
+                          
+                           
+	
+                           

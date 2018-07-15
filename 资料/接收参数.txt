@@ -1,0 +1,27 @@
+//urL方法
+var u=window.location.search.substr(1).split("&");
+    var data=new Array();
+    for (var n=0;n<u.length;n++){
+        var i=u[n].split("=");
+        data[i[0]]=i[1];
+        console.log(data);
+    }
+
+//cookie方法
+document.cookie='aaaaa=1111';
+    var u=document.cookie.split(";");
+    var data=new Array();
+    for (var n=0;n<u.length;n++){
+        var i=u[n].split("=");
+        data[i[0]]=i[1];
+        console.log(data);
+    }
+    alert(data.aaaaa)
+
+//localstorage方法
+ var aa=555;
+    localStorage.setItem("name",aa);
+    console.log(localStorage.getItem("name"));
+
+    localStorage.removeItem("name");//删除
+

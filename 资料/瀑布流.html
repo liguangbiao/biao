@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+</head>
+<style>
+    #main{
+        column-width: 250px;
+    }
+    .box{
+        padding: 12px 7px;
+    }
+    .box img{
+        width: 200px;
+    }
+</style>
+<body>
+<div id="main">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+</body>
+<script>
+    var Imgs=new Array();
+    Imgs=["<img src=\"images/1.jpg\">","<img src=\"images/1.1.jpg\">","<img src=\"images/4.05.jpg\">",
+          "<img src=\"images/2.01.jpg\">","<img src=\"images/3.01.jpg\">","<img src=\"images/5.1.jpg\">",
+          "<img src=\"images/3_03.jpg\">","<img src=\"images/3.06.jpg\">","<img src=\"images/3.06.jpg\">",
+          "<img src=\"images/4.02.jpg\">","<img src=\"images/3.02.jpg\">","<img src=\"images/5.04.jpg\">",
+          "<img src=\"images/5.04.jpg\">","<img src=\"images/6.01.jpg\">","<img src=\"images/7.02.jpg\">",
+          "<img src=\"images/6.1.jpg\">","<img src=\"images/5.01.jpg\">","<img src=\"images/4.07.png\">",
+          "<img src=\"images/1.jpg\">","<img src=\"images/1.1.jpg\">","<img src=\"images/4.05.jpg\">",
+          "<img src=\"images/2.01.jpg\">","<img src=\"images/3.01.jpg\">","<img src=\"images/5.1.jpg\">",
+          "<img src=\"images/3_03.jpg\">","<img src=\"images/3.06.jpg\">","<img src=\"images/3.06.jpg\">",
+          "<img src=\"images/4.02.jpg\">","<img src=\"images/3.02.jpg\">","<img src=\"images/5.04.jpg\">",
+          "<img src=\"images/5.04.jpg\">","<img src=\"images/6.01.jpg\">","<img src=\"images/7.02.jpg\">",
+          "<img src=\"images/6.1.jpg\">","<img src=\"images/5.01.jpg\">","<img src=\"images/4.07.png\">"];
+    var divs=$(".box");
+    for(var a=0;a<Imgs.length;a++){
+        for( var i=2;i<=4;i++){
+            if(divs.eq(1).length>divs.eq(i).length){
+                divs.eq(i).append(Imgs[a]);
+                break;
+            }else {
+                divs.eq(1).append(Imgs[a]);
+                break;
+            }
+        }
+    }
+</script>
+</html>
