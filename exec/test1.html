@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+    <script src="js/vue.js"></script>
+</head>
+<style>
+    p{
+        color: red;
+    }
+</style>
+<body>
+<div id="wrap">
+    <button @click="getSession">获取服务端session</button>
+    <p>session_id:{{sessionId}}</p>
+</div>
+<script>
+    new Vue({
+        el:"#wrap",
+        data:{
+            sessionId:null
+        },
+        methods:{
+            getSession:function () {
+                let that=this;
+                $.get("test.php",function (res) {
+                    that.sessionId=res;
+                })
+            }
+        }
+    })
+</script>
+</body>
+</html>

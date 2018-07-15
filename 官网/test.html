@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+</head>
+<style>
+    /*body{*/
+        /*margin: 0;*/
+        /*padding: 0;*/
+        /*!*position: absolute;*!*/
+    /*}*/
+    .center{
+        /*box-sizing: content-box;*/
+        width: 300px;
+        height: 100px;
+        background: yellow;
+        position: absolute;
+        display: block;
+        left: 0;
+        top:0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        padding: 20px;
+    }
+    button{
+        display: inline-block;
+        box-shadow: 5px 5px 5px;
+        width: 20%;
+        height: 50px;
+        margin: 25px 5px;
+    }
+    ul{
+        width: 7%;
+        background: aqua;
+        position: relative;
+        left: 72%;
+        top: -40%;
+        display: none;
+    }
+    .div2{
+        width: 50px;
+        height: 50px;
+        background: red;
+        border-radius: 25px;
+        position: fixed;
+        margin-left: 0;
+        /*transition: margin-left 5s;*/
+        display: none;
+        bottom: 0;
+        left: 0;
+    }
+    input{
+        width: 30px;
+        height: 30px;
+        margin-left: 15px;
+    }
+    .div1{
+        position: absolute;
+        margin:10% 33%;
+        display: block;
+    }
+    #div3{
+        width: 15%;
+        height: 80px;
+        display: block;
+        background: blueviolet;
+        position: fixed;
+        display: none;
+        right: 0;
+        bottom: 0;
+    }
+</style>
+<body>
+<div class="div1"><input><input><input><input><input><input><input><input><input><input></div>
+<div class="center">
+    <button id="btn1" onclick="location.reload()">按钮一</button>
+    <button id="btn2">按钮二</button>
+    <button id="btn3" onclick="btn3()">按钮三</button>
+    <button id="btn4">按钮四</button>
+    <ul id="ul1">
+        <li>1</li>
+        <li>2</li>
+        <li>2</li>
+        <li>2</li>
+    </ul>
+</div>
+<div class="div2" id="div2"></div>
+<div id="div3">
+    <a href="javascript:">关闭</a><p></p>
+</div>
+</body>
+<script>
+    var btn1=document.getElementById("btn1");
+    var div3=document.getElementById("div3");
+    var p=document.getElementsByTagName("p");
+    function jsonpCallback(result) {
+        var num=result.data;
+        var nums=new Array();
+        nums=num.split(",");
+        if(nums[0]%2!==0&&nums[1]%2!==0){
+            div3.style.cssText="display:block";
+            p[0].innerHTML="第一个值："+nums[0]+"第二个值："+nums[1];
+        }else {
+            alert("第一个值："+nums[0]+"第二个值："+nums[1]);
+        }
+    }
+
+    // function show() {
+    //     var xhr=new XMLHttpRequest();
+    //     xhr.open("GET","http://www.edugzsw.com/api/");
+    //     xhr.send();
+    //     xhr.onreadystatechange = function() {
+    //         if (xhr.readyState===4) {
+    //             if (xhr.status===200) {
+    //                 alert(xhr.responseText);
+    //                 // if(){
+    //                 //     alert(xhr.responseText);
+    //                 // }else {
+    //                 //     alert(xhr.responseText);
+    //                 // }
+    //             } else {
+    //                 alert("发生错误：" + xhr.status);
+    //             }
+    //         }
+    //     }
+    // }
+    var btn4=document.getElementById("btn4");
+    var ul=document.getElementById("ul1");
+    btn4.onmouseover=function () {
+        ul.style.cssText="display: block";
+    };
+    btn4.onmouseleave=function () {
+        ul.style.cssText="display: none";
+    };
+    // var div2=document.getElementById("div2");
+    // function move() {
+    //     div2.style.cssText="display:block";
+    // }
+    $("#btn2").click(function () {
+        $("#div2").css("display","block");
+        $("#div2").animate({left:'95%'},2000);
+    });
+    function btn3() {
+        var myarray=new Array();
+        var myarray1=new Array();
+        var myarray2=new Array();
+        for (var i=0;i<10;i++){
+            myarray[i]=Math.floor(Math.random()*100);
+            var ins=document.getElementsByTagName("input");
+            ins[i].value=myarray[i];
+            if(myarray[i]%2==0){
+                myarray2.push(myarray[i]);
+            }else{
+                myarray1.push(myarray[i]);
+            }
+        }
+        for(var m=0;m<myarray1.length-1;m++){
+            for(var n=0;n<myarray1.length-1-m;n++){
+                if(myarray1[n]<myarray1[n+1]){
+                    var tab;
+                    tab=myarray1[n];myarray1[n]=myarray1[n+1];myarray1[n+1]=tab;
+                }
+            }
+        }
+        for(var j=0;m<myarray2.length-1;j++){
+            for(var k=0;n<myarray2.length-1-j;k++){
+                if(myarray2[k]>myarray2[k+1]){
+                    var tab1;
+                    tab1=myarray2[k];myarray2[k]=myarray2[k+1];myarray2[k+1]=tab1;
+                }
+            }
+        }
+        setTimeout(function () {
+            for (var p=0;p<myarray1.length;p++){
+                ins[p].value=myarray1[p];
+            }
+            for(var t=0;t<myarray2.length;t++){
+                ins[t+myarray1.length].value=myarray2[t];
+            }
+        },5000)
+    }
+    $("a").click(function () {
+        $("#div3").css("display","none");
+    })
+</script>
+<script type="text/javascript" src="http://www.edugzsw.com/api/?callback=jsonpCallback"></script>
+</html>

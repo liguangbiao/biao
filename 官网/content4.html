@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="css/header.css">
+    <link type="text/css" rel="stylesheet" href="css/footer.css">
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+</head>
+<style>
+    /*.secondnav{*/
+        /*width: 125px;*/
+        /*position: absolute;*/
+        /*background-color: #4cbfb1;*/
+        /*padding: 0;*/
+        /*display: none;*/
+        /*z-index: 999;*/
+    /*}*/
+    /*.secondnav>li{*/
+        /*width: 125px;*/
+        /*height: 50px;*/
+        /*color: white;*/
+    /*}*/
+    /*.secondnav>li:hover {*/
+        /*background-color: #419e93;*/
+    /*}*/
+    /*.nav>ul>li:nth-child(n):hover .secondnav{*/
+        /*display: block;*/
+    /*}*/
+    /*.secondnav>li:hover a{*/
+        /*color:#080808;*/
+    /*}*/
+
+
+
+
+    #picture{
+        width: 100%;
+        height: 540px;
+        position: relative;
+    }
+    #picture img{
+        width: 100%;
+        height: 100%;
+    }
+    #content{
+        width: 1200px;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        padding-top: 50px;
+    }
+    #zhaosheng{
+        width: 49%;
+        /*height: 300px;*/
+        float: left;
+    }
+    #jiaoxue{
+        width: 49%;
+        /*height: 300px;*/
+        float: right;
+    }
+    #lianjie{
+        width: 100%;
+        margin: 30px 0 120px 0;
+    }
+    .p1{
+        font-size: 29px;
+        font-family: 黑体;
+        color: #419e93;
+        line-height: 50px;
+    }
+    .p2{
+        font-size: 21px;
+        font-family: "微软雅黑 Light";
+        color: #a0a0a0;
+        float: right;
+        line-height: 46px;
+    }
+    .buttomborder{
+        border-bottom: #419e93 3px solid;
+        margin-bottom: 45px;
+    }
+    /*.photo,.photo>img{*/
+        /*position: relative;*/
+    /*}*/
+    /*.touming{*/
+        /*width: 100%;*/
+        /*height: 55px;*/
+        /*!*background-color: gray;*!*/
+        /*background-color: rgba(106,105,105,0.5);*/
+        /*position: absolute;*/
+        /*top: 231px;*/
+        /*text-align: center;*/
+        /*color: white;*/
+    /*}*/
+    /*.touming span{*/
+        /*!*width: 100%;*!*/
+        /*!*height: 55px;*!*/
+        /*font-size: 17px;*/
+        /*font-family: 微软雅黑;*/
+        /*color: white;*/
+        /*padding: 0;*/
+        /*line-height: 55px;*/
+    /*}*/
+    /*#article img{*/
+        /*vertical-align: middle;*/
+        /*margin: 0 20px 5px 20px;*/
+    /*}*/
+    /*#article{*/
+        /*margin: -20px 25px;*/
+    /*}*/
+    #article p{
+        font-family: "微软雅黑 Light";
+        color: #848484;
+        font-size: 22px;
+    }
+    #lianjie a{
+        color: #9a9898;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    #lianjie a:hover{
+        color: #419e93;
+    }
+    #lianjie ul{
+        box-sizing: border-box;
+        width: 100%;
+        padding: 3% 3%;
+        /*height: 128px;*/
+        border: #c5c5ca 1px solid;
+        /*border-bottom: #c5c5ca 1px solid;*/
+        /*display: table;*/
+        /*text-align: center;*/
+    }
+    #lianjie ul li{
+        display: inline-block;
+        /*vertical-align: top;*/
+        width: 24.6%;
+        /*margin-left: 30px;*/
+        /*height: 128px ;*/
+        /*padding: 28px 20px;*/
+        /*float: left;*/
+        font-size: 18px;
+        font-family: 微软雅黑;
+        color: #9a9898;
+        text-align: center;
+        line-height: 50px;
+    }
+    h1,h2{
+        position: absolute;
+        color: white;
+        font-family: 微软雅黑;
+        transition: top 1s;
+    }
+    h1{
+        top: 12%;
+        margin-left: 35%;
+        font-size: 84px;
+    }
+    h2{
+        top:62%;
+        font-size: 55px;
+        margin-left: 35%;
+    }
+    canvas{
+        position: absolute;
+        top: 15%;
+        margin-left: 20%;
+        transition: all 1s;
+        transform: scale(0.3);
+    }
+
+    a{
+        color: white;
+    }
+    /*#content a{*/
+        /*color: #a0a0a0;*/
+    /*}*/
+    /*#article a{*/
+        /*color: #848484;*/
+    /*}*/
+    /*.photo1{*/
+        /*width: 500px;*/
+        /*height: 330px;*/
+        /*left: 0;*/
+        /*right: 0;*/
+        /*margin: auto;*/
+        /*position: relative;*/
+    /*}*/
+    /*.photo1 img{*/
+        /*width: 100%;*/
+    /*}*/
+    .articlelist{
+        width: 100%;
+    }
+    .articlelist ul{
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 30px;
+    }
+    .articlelist ul li{
+        width: 100%;
+    }
+    .articlelist img{
+        max-width: 528px;
+    }
+    .articlelist ul li:first-child{
+        margin-bottom: 25px;
+        position: relative;
+    }
+    .articlelist ul li:nth-child(n+2) a{
+        box-sizing: border-box;
+        color: #848484;
+        font-size: 22px;
+        line-height: 50px;
+        width: 100%;
+        display: block;
+        padding: 0 8px 0 3px;
+    }
+    .articlelist ul li:nth-child(n+2) a:hover{
+        color: #40887d;
+        font-family: 微软雅黑;
+    }
+    .articlelist ul li:nth-child(n+2) a>p{
+        width: 60%;
+        display: inline-block;
+        margin: 10px 0 0 0;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        line-height: 30px;
+    }
+    .articlelist ul li:nth-child(n+2) a>span{
+        width: 30%;
+        display: inline-block;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        line-height: 25px;
+        font-size: 17px;
+        float: right;
+        text-align: right;
+        margin-top: 12px;
+    }
+    .articlelist ul li:nth-child(n+2) a>img{
+        margin: 0 20px 4px 5px;
+    }
+    .mohu{
+        width: 100%;
+        height: 55px;
+        background-color: rgba(106,105,105,0.5);
+        position: absolute;
+        top: 247px;
+    }
+    .mohu a{
+        width: 100%;
+        height: 55px;
+        display: block;
+        font-size: 17px;
+        color: white;
+        line-height: 55px;
+        text-indent: 1.5em;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .p2>a{
+        color: #a0a0a0;
+    }
+
+</style>
+<body>
+<div id="header">
+    <div id="logo">
+        <img src="images/logo.png" style="vertical-align: bottom">
+        <span>致力于IT软件专才培养<br>高端就业服务导向</span>
+        <div class="search"><i class="icon"></i><input type="text" placeholder="请输入你要搜索的关键词"><input type="button" value="搜索"></div>
+    </div>
+    <div class="nav">
+        <ul>
+            <li><a href="javascript:">首页</a></li>
+            <li><a href="javascript:">机构概况</a>
+                <ul class="secondnav">
+                    <li><a href="javascript:">教学公告</a></li>
+                    <li><a href="javascript:">师资介绍</a></li>
+                    <li><a href="javascript:">学员活动</a></li>
+                </ul></li>
+            <li><a href="javascript:">招生简章</a>
+                <ul class="secondnav">
+                    <li><a href="javascript:">教学公告</a></li>
+                    <li><a href="javascript:">师资介绍</a></li>
+                    <li><a href="javascript:">学员活动</a></li>
+                </ul></li>
+            <li><a href="javascript:">教学管理</a>
+                <ul class="secondnav">
+                    <li><a href="javascript:">教学公告</a></li>
+                    <li><a href="javascript:">师资介绍</a></li>
+                    <li><a href="javascript:">学员活动</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:">联系我们</a>
+                <ul class="secondnav">
+                    <li><a href="javascript:">教学公告</a></li>
+                    <li><a href="javascript:">师资介绍</a></li>
+                    <li><a href="javascript:">学员活动</a></li>
+                </ul></li>
+        </ul>
+    </div>
+</div>
+<div id="picture">
+    <img src="images/4.01.jpg">
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+    <h1 id="move1">晟威教育</h1>
+    <h2 id="move2">为你精选考研专业</h2>
+</div>
+<div id="content">
+    <div id="zhaosheng">
+        <div class="buttomborder">
+            <img src="images/4.02.png" style="vertical-align: bottom">
+            <span class="p1">招生信息</span>
+            <span class="p2"><a href="javascript:">MORE+</a></span>
+        </div>
+        <!--<div class="photo">-->
+            <!--<div class="photo1"><img src="images/4.05.jpg">-->
+                <!--<div><a href="javascript:" class="touming"><span>武汉工程大学工商管理硕士研究生招生简章 MBA在职学历..</span></a> </div>-->
+            <!--</div>-->
+
+            <!--<div id="article">-->
+                <!--<p><a href="javascript:"> <img src="images/4.06.png">2018工程大MBA招生简章 </a></p>-->
+                <!--<p><a href="javascript:"><img src="images/4.06.png">2018MPA.cc招生简章</a></p>-->
+                <!--<p><a href="javascript:"><img src="images/4.06.png">2018湖工大MBA招生简章</a></p>-->
+                <!--<p><a href="javascript:"><img src="images/4.06.png">2018南华MBA招生简章</a></p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="articlelist">
+            <ul>
+                <li>
+                    <img src="images/4.05.jpg">
+                    <div class="mohu">
+                        <a href="javascript:">武汉工程大学工商管理硕士研究生招生简章 MBA在职学历..</a>
+                    </div>
+                </li>
+                <li><a href="javascript:"><img src="images/4.06.png"><p>2018工程大MBA招生简章</p><span>2017/3/10</span></a></li>
+                <li><a href="javascript:"><img src="images/4.06.png"><p>2018MPA.cc招生简章</p><span>2017/3/10</span></a></li>
+                <li><a href="javascript:"><img src="images/4.06.png"><p>2018湖工大MBA招生简章</p><span>2017/3/10</span></a></li>
+                <li><a href="javascript:"><img src="images/4.06.png"><p>2018南华MBA招生简章</p><span>2017/3/10</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="jiaoxue">
+        <div class="buttomborder">
+             <img src="images/4.03.png" style="vertical-align: bottom">
+            <span class="p1">教学公告</span>
+            <span class="p2"><a href="javascript:"> MORE+</a></span>
+        </div>
+        <!--<div class="photo">-->
+            <!--<div class="photo1"><img src="images/4.05.jpg" style="vertical-align: bottom">-->
+            <!--<div><a href="javascript:" class="touming"><span>湖北工业大学第一学期课程表˙17级MBA广深班10月21日.... </span></a> </div>-->
+            <!--</div></div>-->
+        <!--<div id="article">-->
+            <!--<p><a href="javascript:"><img src="images/4.06.png">湖工大MBA课程表2017下半年① </a></p>-->
+            <!--<p><a href="javascript:"><img src="images/4.06.png">MBA课程表2017下半年</a></p>-->
+            <!--<p><a href="javascript:"><img src="images/4.06.png">MBA课程表2017上半年</a></p>-->
+            <!--<p><a href="javascript:"><img src="images/4.06.png">MBA课程表2016下半年</a></p>-->
+        <!--</div>-->
+        <div class="articlelist">
+            <ul>
+                <li>
+                    <img src="images/4.05.jpg">
+                    <div class="mohu">
+                        <a href="javascript:">湖北工业大学第一学期课程表˙17级MBA广深班10月21日.... </a>
+                    </div>
+                </li>
+                <li><a href="javascript:"><img src="images/4.06.png"><p>湖工大MBA课程表2017下半年①</p><span>2017/3/10</span></a></li>
+                <li><a href="javascript:"><img src="images/4.06.png"><p>MBA课程表2017下半年</p><span>2017/3/10</span></a></li>
+                <li><a href="javascript:"><img src="images/4.06.png"><p>MBA课程表2017上半年</p><span>2017/3/10</span></a></li>
+                <li><a href="javascript:"><img src="images/4.06.png"><p>MBA课程表2016下半年</p><span>2017/3/10</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div style="clear: both"></div>
+    <div id="lianjie">
+        <div class="buttomborder">
+            <img src="images/4.04.png" style="vertical-align: bottom">
+            <span class="p1">友情链接</span>
+        </div>
+        <ul>
+            <li><a href="javascript:">中国研究生招生信息网 </a></li>
+            <li><a href="javascript:">中国学位与研究生教育信息网</a></li>
+            <li><a href="javascript:">中国高等教育学生信息网</a></li>
+            <li><a href="javascript:">升专 升本 套本 插本</a></li>
+            <li><a href="javascript:">技师户口</a></li>
+            <li><a href="javascript:">我要POS移动支付神器</a></li>
+        </ul>
+    </div>
+</div>
+<div id="footer">
+    <div class="calllist">
+        <div id="f1"><a href="javascript:"> <p>客服热线</p><img src="images/logoph.png"><br><span>400-600-3738</span></a></div>
+        <div id="f2"><a href="javascript:"><p>关注我们</p><span>微信公众号</span><img src="images/logovx.png"><img src="images/logovx1.png" style="margin-left: 50px"></a></div>
+        <div id="f3"><a href="javascript:"><p>在线咨询</p><img src="images/logoqq.png"><br><span>1350707</span></a></div>
+    </div>
+    <ul class="footlist">
+        <li><a href="javascript:">首  页</a></li>
+        <li><a href="javascript:">关于晟威</a></li>
+        <li><a href="javascript:">培训课程</a></li>
+        <li><a href="javascript:">在线咨询</a></li>
+    </ul>
+</div>
+</body>
+<script>
+    window.onload=function (ev) {
+        $("#move1").css("top","20%");
+        $("#move2").css("top","44%");
+        var canvas=document.getElementById("myCanvas");
+        var ctx=canvas.getContext('2d');
+        ctx.lineWidth=4;
+        ctx.moveTo(260,85);
+        ctx.lineTo(260,30);
+        ctx.lineTo(10,30);
+        ctx.lineTo(10,350);
+        ctx.lineTo(260,350);
+        ctx.lineTo(260,290);
+        ctx.strokeStyle="white";
+        ctx.stroke();
+    };
+    $("#myCanvas").animate({marginLeft:"30%"});
+    $("#myCanvas").css("transform","scale(1)");
+    $(".articlelist").find("a").mouseover(function () {
+        $(this).children("img").attr("src","images/4.061.png");
+    });
+    $(".articlelist").find("a").mouseleave(function () {
+        $(this).children("img").attr("src","images/4.06.png");
+    })
+
+</script>
+</html>

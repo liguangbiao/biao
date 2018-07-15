@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>案例内页</title>
+    <link type="text/css" rel="stylesheet" href="css/header.css">
+    <link type="text/css" rel="stylesheet" href="css/footer.css">
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+</head>
+<style>
+    #main{
+        width: 100%;
+        min-width: 1200px;
+    }
+    .container{
+        width: 1200px;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .line{
+        width: 100%;
+        height: 115px;
+    }
+    .line>div:first-child{
+        width: 16%;
+        height: 115px;
+        display: inline-block;
+        border-bottom:rgb(189,164,122) 1px solid;
+    }
+    .line>div:last-child{
+        width: 82%;
+        height: 115px;
+        margin-left: 2px;
+        display: inline-block;
+        border-bottom: #ababab 1px dashed;
+    }
+    .breadCrumb {
+        padding: 20px 0;
+        letter-spacing: 1px;
+        font-size: 13px;
+    }
+    a{
+        text-decoration: none;
+    }
+    .breadCrumb a{
+        color: black;
+        font-family: 方正兰亭中黑;
+        font-size: 15px;
+    }
+    .breadCrumb a:first-child{
+        margin-left: 2px;
+        padding-right: 15px;
+        border-right:rgb(189,164,122) 2px solid ;
+        margin-right: 15px;
+    }
+    .title{
+        letter-spacing: 1px;
+        font-family: 方正兰亭中黑;
+        font-size: 25px;
+        color: #060001;
+        margin: 25px 0 10px 2px;
+    }
+    .picture{
+        width: 1200px;
+        margin: 40px 0;
+        border-bottom: #ababab 1px solid;
+        padding-bottom: 40px;
+    }
+    .picture>img{
+        display: block;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 1200px;
+        height: 800px;
+    }
+    .menu{
+        margin: 30px 10px;
+        width: 1200px;
+    }
+    .menu img{
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+    }
+    .menu>div:first-child,.menu>div:last-child{
+        width: 134px;
+        height: 135px;
+    }
+    .menu div:first-child>a,.menu div:last-child>a{
+        width: 100%;
+        height: 100%;
+        display: block;
+        text-align: center;
+        padding: 50px 52px;
+        box-sizing: border-box;
+    }
+    .menu>div:first-child{
+        float: left;
+    }
+    .menu>div:last-child{
+        float: left;
+    }
+    .menu_picture{
+        width: 932px;
+        height: 150px;
+        float: left;
+        overflow: hidden;
+    }
+    .menu_picture>ul{
+        width: 1200px;
+        height: 150px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        /*position: absolute;*/
+        margin-left: -133px;
+    }
+    .menu_picture>ul>li{
+        width: 133px;
+        height: 133px;
+        float: left;
+        padding: 17px 17px;
+        box-sizing: border-box;
+    }
+    .menu_picture>ul>li:hover{
+        border:  rgb(189,164,122) 1px solid;
+    }
+    .menu_picture>ul>li:hover img{
+        transform: scale(1.2);
+    }
+    .menu_picture img{
+        width: 100%;
+        height: 100%;
+        transform: scale(0.9);
+    }
+    .menu_picture a{
+        width: 100%;
+        height: 100%;
+        display: block;
+        text-align: center;
+    }
+    .content{
+        width: 1200px;
+        left: 0;
+        right: 0;
+        margin: 50px auto 80px auto;
+    }
+    .content p{
+        color: #585858;
+        font-size: 17px;
+        /*font-family: 方正兰亭准黑;*/
+        font-family: 微软雅黑;
+        line-height: 28px;
+        text-indent: 2em;
+        margin: 0;
+    }
+</style>
+<body>
+<div id="header">
+    <div class="nav">
+        <ul>
+            <li><a href="introduction.html">ABOUT</a></li>
+            <li><a href="case.html">SOLUTION</a></li>
+            <li><div><div><a href="index.html"><img src="images/logo.png"></a></div><div><a href="index.html"><img src="images/logo1.png"></a></div></div></li>
+            <li><a href="service.html">WORK</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </div>
+</div>
+<div id="main">
+    <div class="container">
+        <div class="line">
+            <div></div>
+            <div></div>
+        </div>
+        <div class="breadCrumb">
+            <span><a href="javascript:">CASE INTRODUCTION</a><a href="javascript:">案例介绍</a></span>
+        </div>
+        <div class="title">
+            <span>百年皇室经典 华南至臻首秀 ：GARRARD珠宝赏鉴之约</span>
+        </div>
+        <div class="picture">
+            <img src="images/2.01.jpg">
+        </div>
+        <div class="menu">
+            <div><a href="javascript:"><img src="images/left.png"></a></div>
+            <div class="menu_picture">
+                <ul class="menu_list">
+                    <li><a href="javascript:"><img src="images/7.1.jpg"></a></li>
+                    <li><a href="javascript:"><img src="images/1.1.jpg"></a></li>
+                    <li><a href="javascript:"><img src="images/2.1.jpg"></a></li>
+                    <li><a href="javascript:"><img src="images/3.1.jpg"></a></li>
+                    <li><a href="javascript:"><img src="images/4.1.jpg"></a></li>
+                    <li><a href="javascript:"><img src="images/5.1.jpg"></a></li>
+                    <li><a href="javascript:"><img src="images/6.1.jpg"></a></li>
+                    <li><a href="javascript:"><img src="images/7.1.jpg"></a></li>
+                    <li><a href="javascript:"><img src="images/1.1.jpg"></a></li>
+                </ul>
+            </div>
+            <div><a href="javascript:"><img src="images/right.png"></a></div>
+        </div>
+        <div style="clear: both"></div>
+        <div class="content">
+            <p>从维多利亚女王到现在的伊丽莎白二世女王，“王冠珠宝商”GARRARD已经连续为六位英国君主提供加冕王冠，并服务于全球五大洲的108个皇室家族。GARRARD的传世之作在全球诸多著名博物馆中均有展出，包括大英博物馆、伦敦塔、维多利亚阿尔伯特博物馆、纽约大都会博物馆、及德国普福尔茨海姆珠宝博物馆等。</p>
+            <br><br>
+            <p>  2018年1月27日，全球最古老的皇室定制珠宝品牌GARRARD与华南奢尚公关创意平台Wilber Media携手做了一件大事。</p>
+            <p>    由GARRARD伦敦总部亲自臻选出的数十件珠宝杰作，首度空降中国广州，在Wilber Media亲自邀请的数十位华南区珠宝藏家名媛面前，揭开了英女王至爱珠宝的神秘面纱。</p>
+            <p>精巧独特的制作工艺，高贵典雅的英伦风范，面对GARRARD的艺术品，即使是资深珠宝藏家名媛们也忍不住动心。</p>
+            <p>这是一场完美的皇室珠宝艺术之旅，贵宾们与专程从英国飞抵的品牌大使交流，零距离欣赏每一件珠宝臻品，甚至现场试戴嵌满钻石的美丽王冠。璀璨时刻，一如英女王伊丽莎白二世戴上王冠时所享有的欣喜与荣耀。</p>
+            <p>    珠宝品鉴之后是极致私密的臻享晚宴。刚从法国回来的米其林二星名厨、美食畅销书作家Michel Portos，特地赶来为本场活动贵宾亲自制作一款——以GARRARD珠宝为灵感创造的法式甜品。Wilber Media还贴心地为宾客们准备了精致的鲜花伴手礼盒，内含法国著名造型砂糖CANASUC，希望为今晚的贵宾们留下最甜蜜的回忆。</p>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div>
+        <img src="images/logo.png">
+    </div>
+</div>
+</body>
+<script>
+    $(".menu").find("div:first-child").click(function(){
+        var text=parseInt($(".menu_list").css("margin-left"))-133;
+        $(".menu_list").css("margin-left",text);
+        if(text == -399){
+            $(".menu_list").css("margin-left","-133px");
+        }
+    });
+    $(".menu").find("div:last-child").click(function(){
+        var text=parseInt($(".menu_list").css("margin-left"))+133;
+        $(".menu_list").css("margin-left",text);
+        if(text == 133){
+            $(".menu_list").css("margin-left","-133px");
+        }
+    })
+    $(".menu_list").find("img").click(function () {
+        var text=$(this).attr("src");
+        $(".picture").children("img").attr("src",text);
+    })
+</script>
+</html>

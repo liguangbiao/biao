@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/footer.css">
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        font-family: "微软雅黑 Light";
+    }
+    a{
+        text-decoration: none;
+        color: #a0a0a0;
+    }
+    #header{
+        width: 1204px;
+        height: 126px;
+        position: relative;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    ul{
+        list-style: none;
+    }
+    ul li{
+        float: left;
+    }
+    .logo{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    .nav{
+        width: 500px;
+        height: 60px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+    }
+    .nav li{
+        /*padding: 20px 5px;*/
+        margin: 0 15px;
+        font-family: "微软雅黑 Light";
+        color: #7d7878;
+    }
+    .nav >li>a{
+        display: block;
+        padding: 20px 5px;
+    }
+    .nav li:hover{
+        border-bottom: #419e93 2px solid;
+    }
+    .nav li:hover a{
+        color: #419e93;
+    }
+    h1{
+        font-family: "微软雅黑 Light";
+        font-size: 70px;
+        position: absolute;
+        color: white;
+        transition: margin-left 1s;
+    }
+    #move1{
+        top:40%;
+        margin-left: 10%;
+    }
+    #move2{
+        top: 55%;
+        margin-left: 40%;
+    }
+    h2{
+        margin-top: 128px;
+        padding: 0;
+        text-align: center;
+        font-size: 53px;
+        width: 1204px;
+        left: 0;
+        right: 0;
+        margin: 128px auto 43px auto;
+        color: #7d7878;
+    }
+    h2>span{
+        color: #e4322c;
+    }
+    #list{
+        width: 1204px;
+        height: 600px;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        border-top: #7d7878 1px solid ;
+    }
+    #list ul{
+        width: 100%;
+        margin-top: 95px;
+        padding: 0;
+        text-align: center;
+    }
+    #list ul li{
+        width: 25%;
+    }
+    #list ul div{
+        margin-top: 73px;
+    }
+    .s1{
+        font-size: 29px;
+        color: #419e93;
+        line-height: 50px;
+    }
+    .s2{
+        font-size: 19px;
+        color: #a0a0a0;
+        line-height: 33px;
+    }
+</style>
+<body>
+<div id="header">
+    <img src="images/logo.png" class="logo">
+    <ul class="nav">
+        <li><a href="javascript:">首页</a></li>
+        <li><a href="javascript:">软件培训</a></li>
+        <li><a href="javascript:">证件培训</a></li>
+        <li><a href="javascript:">关于我们</a></li>
+    </ul>
+</div>
+<div id="content">
+    <img src="images/p1.jpg" width="100%">
+    <h1 id="move1">致力于IT软件专才培养</h1>
+    <h1 id="move2">高端就业高端就业服务导向</h1>
+</div>
+<div>
+    <h2><span>最具公信力/最具吸引力</span>的技能培训和就业服务机构</h2>
+    <div id="list">
+        <ul>
+            <li><a href="javascript:" id="yanbo"><img src="images/logo03.png"></a>
+                <div>
+                    <a href="javascript:" class="s1">专本研博</a><br>
+                    <span class="s2">管理领域高端课程体系研发 <br>专业学历学位教育培训服务</span>
+                </div></li>
+            <li><a href="javascript:" id="peixun"> <img src="images/logo02.png"></a>
+                <div>
+                    <a href="javascript:" class="s1">软件培训</a><br>
+                    <span class="s2" style="font-size: 17px">全新升级·引领行业的HTML5/Web课程<br>十年教培运营经验 专注软件人才培养</span>
+                </div></li>
+            <li><a href="javascript:" id="jiuye"> <img src="images/logo01.png"></a>
+                <div>
+                    <a href="javascript:" class="s1">就业创业</a><br>
+                    <span class="s2">与多家知名企业合作<br>晟威助你一臂之力</span>
+                </div></li>
+            <li><a href="javascript:" id="ruhu"> <img src="images/logo04.png"></a>
+                <div>
+                    <a href="javascript:" class="s1">积分入户</a><br>
+                    <span class="s2">通过技能证书引进人才<br>入住大城市不再是梦</span>
+                </div></li>
+        </ul>
+    </div>
+</div>
+<div id="footer">
+    <div class="calllist">
+        <div id="f1"><a href="javascript:"> <p>客服热线</p><img src="images/logoph.png"><br><span>400-600-3738</span></a></div>
+        <div id="f2"><a href="javascript:"><p>关注我们</p><span>微信公众号</span><img src="images/logovx.png"><img src="images/logovx1.png" style="margin-left: 50px"></a></div>
+        <div id="f3"><a href="javascript:"><p>在线咨询</p><img src="images/logoqq.png"><br><span>1350707</span></a></div>
+    </div>
+    <ul class="footlist">
+        <li><a href="javascript:">首  页</a></li>
+        <li><a href="javascript:">关于晟威</a></li>
+        <li><a href="javascript:">培训课程</a></li>
+        <li><a href="javascript:">在线咨询</a></li>
+    </ul>
+</div>
+</body>
+<script>
+    window.onload=function (ev) {
+        $("#move1").css("margin-left","28%");
+        $("#move2").css("margin-left","23%");
+    };
+    $("#peixun").mouseover(function () {
+        $("#peixun").find("img").attr("src","images/logo021.png");
+    });
+    $("#peixun").mouseleave(function () {
+        $("#peixun").find("img").attr("src","images/logo02.png");
+    });
+    $("#yanbo").mouseover(function () {
+        $("#yanbo").find("img").attr("src","images/logo031.png");
+    });
+    $("#yanbo").mouseleave(function () {
+        $("#yanbo").find("img").attr("src","images/logo03.png");
+    });
+    $("#jiuye").mouseover(function () {
+        $("#jiuye").find("img").attr("src","images/logo011.png");
+    });
+    $("#jiuye").mouseleave(function () {
+        $("#jiuye").find("img").attr("src","images/logo01.png");
+    });
+    $("#ruhu").mouseover(function () {
+        $("#ruhu").find("img").attr("src","images/logo041.png");
+    });
+    $("#ruhu").mouseleave(function () {
+        $("#ruhu").find("img").attr("src","images/logo04.png");
+    });
+</script>
+</html>

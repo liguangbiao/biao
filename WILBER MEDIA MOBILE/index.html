@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name ="keywords" content="关键字">
+    <meta name ="description" content="网页描述">
+    <meta name ="robots" content="机器人引导">
+    <meta name ="author" content="作者">
+    <meta name="viewport" content="user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="css/header.css">
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+    <script src="js/nav.js"></script>
+</head>
+<body>
+<div id="header">
+    <span></span>
+    <img src="images/logo.png">
+    <div>
+        <a onclick="shownav()">
+            <img src="images/nav.png">
+        </a>
+        <ul class="nav">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="公司介绍.html">公司介绍</a></li>
+            <li><a href="服务.html">公司服务</a></li>
+            <li><a href="案例.html">公司案例</a></li>
+            <li><a href="案例内页.html">案例内页</a></li>
+            <li><a href="联系.html">联系我们</a></li>
+        </ul>
+    </div>
+</div>
+<div id="main">
+    <div class="title">
+        <div><p>华南奢尚公关创意平台</p></div>
+        <span>LUXURY PR BUSINESS INNOVATION<br> AND COMMUNICATION PLATFORM IN SOUTH CHINA</span>
+    </div>
+</div>
+</body>
+<script>
+    var wheight=document.documentElement.clientHeight;
+    var hheight=parseInt($("#header").css("height"));
+    var zheight=wheight-hheight;
+    $("#main").css("height",zheight);
+</script>
+</html>

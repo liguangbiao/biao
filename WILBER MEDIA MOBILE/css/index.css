@@ -1,0 +1,45 @@
+#main{
+    width: 100%;
+    min-height: 80rem;
+    background-image: url("../images/bg.jpg");
+    background-size: 100% 100%;
+    display: flex;
+}
+.title{
+    width: 100%;
+    margin: auto;
+}
+.title>div{
+    width: 54%;
+    box-sizing: border-box;
+    font-family: 微软雅黑;
+    color: white;
+    letter-spacing: 4px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-bottom: rgb(189,164,122) 1.5px solid;
+}
+.title>div>p{
+    /*font-family: FZXH1JW;*/
+    font-family: "微软雅黑 Light";
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+    margin: 6px 0;
+    padding-bottom: 10px;
+    border-bottom:rgba(189,164,122,0.6) 1.5px solid;
+}
+.title span{
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 0 5%;
+    font-size: 2.2rem;
+    color: white;
+    font-family: "微软雅黑 Light";
+    line-height: 50px;
+    margin-top: 30px;
+    text-align: center;
+    font-weight: lighter;
+}

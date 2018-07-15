@@ -1,0 +1,134 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑 Light";
+    color: #7d7878;
+}
+#header a{
+    color: white;
+}
+#header{
+    width: 100%;
+}
+ul{
+    list-style: none;
+}
+#logo{
+    box-sizing: border-box;
+    width: 1200px;
+    height: 90px;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    padding-top: 20px;
+}
+.search{
+    display: inline-block;
+    float: right;
+    margin-top: 32px;
+}
+.search input:nth-child(2){
+    box-sizing: border-box;
+    padding: 0 0 0 35px;
+    width: 250px;
+    height: 30px;
+}
+input:focus{
+    outline: none;
+}
+.search input[type=button]{
+    width: 72px;
+    height: 30px;
+    background-color: #4cbfb1;
+    border: none;
+    margin-right: 5px;
+    letter-spacing: 5px;
+    color: white;
+    position: relative;
+    top: 1px;
+    cursor:pointer;
+    /*border-radius: 2px;*/
+}
+.nav{
+    display: block;
+    width: 100%;
+    height: 50px;
+    background-color: #419e93;
+    margin: 40px 0 30px 0;
+}
+.nav>ul{
+    width: 1200px;
+    height: 50px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 0;
+}
+.nav>ul>li{
+    /*width: 125px;*/
+    /*height: 50px;*/
+    text-align: center;
+    line-height: 50px;
+    float: left;
+}
+.nav>ul>li>a{
+    width: 125px;
+    height: 50px;
+    display: block;
+    font-family: "微软雅黑 Light";
+    color: white;
+    text-decoration: none;
+}
+.nav>ul>li:hover{
+    background-color: #4cbfb1;
+}
+
+.secondnav{
+    width: 125px;
+    position: absolute;
+    background-color: #4cbfb1;
+    padding: 0;
+    display: none;
+    z-index: 999;
+}
+.secondnav>li{
+    /*width: 125px;*/
+    /*height: 50px;*/
+    color: white;
+}
+.secondnav>li>a{
+    width: 125px;
+    height: 50px;
+    display: block;
+}
+.secondnav>li:hover {
+    background-color: #5d9fa8;
+}
+.nav>ul>li:nth-child(n):hover .secondnav{
+    display: block;
+}
+.secondnav>li:hover a{
+    color: #dcded5;
+}
+.icon{
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    background-image: url(../images/search.png);
+    position: relative;
+    left: 30px;
+    top:8px;
+    border-right: #bababf 1px solid;
+}
+#logo span{
+    font-size: 19px;
+    font-family: 微软雅黑;
+    color: #6d6c6c;
+    display: inline-block;
+    margin: 0;
+    border-left: #7d7878 2px solid;
+    padding: 0 20px;
+    line-height: 33px;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>案例</title>
+    <meta name ="keywords" content="关键字">
+    <meta name ="description" content="网页描述">
+    <meta name ="robots" content="机器人引导">
+    <meta name ="author" content="作者">
+    <meta name="viewport" content="user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="css/header.css">
+    <link type="text/css" rel="stylesheet" href="css/banner.css">
+    <link type="text/css" rel="stylesheet" href="css/footer.css">
+    <link type="text/css" rel="stylesheet" href="css/case.css">
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+    <script src="js/nav.js"></script>
+
+</head>
+<body>
+<div id="header">
+    <span></span>
+    <img src="images/logo.png">
+    <div>
+        <a onclick="shownav()">
+            <img src="images/nav.png">
+        </a>
+        <ul class="nav">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="公司介绍.html">公司介绍</a></li>
+            <li><a href="服务.html">公司服务</a></li>
+            <li><a href="案例.html">公司案例</a></li>
+            <li><a href="案例内页.html">案例内页</a></li>
+            <li><a href="联系.html">联系我们</a></li>
+        </ul>
+    </div>
+</div>
+<div id="banner">
+    <div class="picture">
+        <img src="images/2.01.jpg">
+    </div>
+    <div class="title">
+        <div>
+            <span>“</span>
+            <p>COMPANY CASE</p>
+            <p>公司案例</p>
+            <p>WATCH MORE</p>
+            <span>”</span>
+        </div>
+    </div>
+
+</div>
+<div id="main">
+    <div class="content">
+        <ul>
+            <li>
+                <div>
+                    <span>GARRARD珠宝赏鉴之约</span>
+                    <p>从维多利亚女王到现在的伊丽莎白二世女王，“王冠珠宝商”...</p>
+                    <a href="javascript:">MORE</a>
+                </div>
+                <a href="javascript:">
+                    <img src="images/2.03.jpg">
+                    <span>案例</span>
+                </a>
+            </li>
+            <li>
+                <div>
+                    <span>GARRARD珠宝赏鉴之约</span>
+                    <p>从维多利亚女王到现在的伊丽莎白二世女王，“王冠珠宝商”...</p>
+                    <a href="javascript:">MORE</a>
+                </div>
+                <a href="javascript:">
+                    <img src="images/2.04.jpg">
+                    <span>新闻</span>
+                </a>
+            </li>
+            <li>
+                <div>
+                    <span>GARRARD珠宝赏鉴之约</span>
+                    <p>从维多利亚女王到现在的伊丽莎白二世女王，“王冠珠宝商”...</p>
+                    <a href="javascript:">MORE</a>
+                </div>
+                <a href="javascript:">
+                    <img src="images/2.05.jpg">
+                    <span>案例</span>
+                </a>
+            </li>
+            <li>
+                <div>
+                    <span>GARRARD珠宝赏鉴之约</span>
+                    <p>从维多利亚女王到现在的伊丽莎白二世女王，“王冠珠宝商”...</p>
+                    <a href="javascript:">MORE</a>
+                </div>
+                <a href="javascript:">
+                    <img src="images/2.06.jpg">
+                    <span>新闻</span>
+                </a>
+            </li>
+        </ul>
+        <div class="page">
+            <ul>
+                <li><a href="javascript:" class="pageactive">1</a></li>
+                <li><a href="javascript:" class="normal">2</a></li>
+                <li><a href="javascript:" class="normal">></a></li>
+                <li><a href="javascript:" class="normal">>> </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div>
+        <img src="images/logo.png">
+        <div>
+            <p>地址：广州市珠江新城珠江东路16号高德置<br>&emsp;&emsp;&emsp;地H座15层</p>
+            <p>热线：15918483441</p>
+            <p>邮箱：ANNAOU@WILBER.COM.CN</p>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    $(".page").find("a").click(function () {
+        $(this).removeClass("normal").addClass("pageactive");
+        $(this).parent("li").siblings().find("a").removeClass("pageactive").addClass("normal");
+    });
+    $(".content").children("ul:first-child").children("li").click(function () {
+        window.location.href="案例内页.html";
+    })
+</script>
+</html>

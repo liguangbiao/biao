@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>案例内页</title>
+    <meta name ="keywords" content="关键字">
+    <meta name ="description" content="网页描述">
+    <meta name ="robots" content="机器人引导">
+    <meta name ="author" content="作者">
+    <meta name="viewport" content="user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="css/header.css">
+    <link type="text/css" rel="stylesheet" href="css/banner.css">
+    <link type="text/css" rel="stylesheet" href="css/footer.css">
+    <link type="text/css" rel="stylesheet" href="css/caseli.css">
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+    <script src="js/nav.js"></script>
+</head>
+<body>
+<div id="header">
+    <span></span>
+    <img src="images/logo.png">
+    <div>
+        <a onclick="shownav()">
+            <img src="images/nav.png">
+        </a>
+        <ul class="nav">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="公司介绍.html">公司介绍</a></li>
+            <li><a href="服务.html">公司服务</a></li>
+            <li><a href="案例.html">公司案例</a></li>
+            <li><a href="案例内页.html">案例内页</a></li>
+            <li><a href="联系.html">联系我们</a></li>
+        </ul>
+    </div>
+</div>
+<div id="banner">
+    <div class="picture">
+        <img src="images/2.01.jpg">
+    </div>
+    <canvas id="myCanvas" width="880"></canvas>
+</div>
+<div id="main">
+    <p>从维多利亚女王到现在的伊丽莎白二世女王，“王冠珠宝商”GARRARD已经连续为六位英国君主提供加冕王冠，并服务于全球五大洲的108个皇室家族。GARRARD的传世之作在全球诸多著名博物馆中均有展出，包括大英博物馆、伦敦塔、维多利亚阿尔伯特博物馆、纽约大都会博物馆、及德国普福尔茨海姆珠宝博物馆等。</p>
+    <img src="images/3.01.jpg">
+    <p>2018年1月27日，全球最古老的皇室定制珠宝品牌GARRARD与华南奢尚公关创意平台Wilber Media携手做了一件大事。</p>
+    <img src="images/3.02.jpg">
+    <img src="images/3.01.jpg">
+    <img src="images/3.03.jpg">
+    <img src="images/3.02.jpg">
+    <p>由GARRARD伦敦总部亲自臻选出的数十件珠宝杰作，首度空降中国广州，在Wilber Media亲自邀请的数十位华南区珠宝藏家名媛面前，揭开了英女王至爱珠宝的神秘面纱。</p>
+    <img src="images/3.01.jpg">
+    <p>精巧独特的制作工艺，高贵典雅的英伦风范，面对GARRARD的艺术品，即使是资深珠宝藏家名媛们也忍不住动心。这是一场完美的皇室珠宝艺术之旅，贵宾们与专程从英国飞抵的品牌大使交流，零距离欣赏每一件珠宝臻品，甚至现场试戴嵌满钻石的美丽王冠。璀璨时刻，一如英女王伊丽莎白二世戴上王冠时所享有的欣喜与荣耀。
+        珠宝品鉴之后是极致私密的臻享晚宴。</p>
+    <img src="images/3.01.jpg">
+    <p>刚从法国回来的米其林二星名厨、美食畅销书作家Michel Portos，特地赶来为本场活动贵宾亲自制作一款——以GARRARD珠宝为灵感创造的法式甜品。Wilber Media还贴心地为宾客们准备了精致的鲜花伴手礼盒，内含法国著名造型砂糖CANASUC，希望为今晚的贵宾们留下最甜蜜的回忆。</p>
+</div>
+<div id="footer">
+    <div>
+        <img src="images/logo.png">
+        <div>
+            <p>地址：广州市珠江新城珠江东路16号高德置<br>&emsp;&emsp;&emsp;地H座15层</p>
+            <p>热线：15918483441</p>
+            <p>邮箱：ANNAOU@WILBER.COM.CN</p>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    window.onload=function (ev) {
+        var canvas=document.getElementById("myCanvas");
+        var ctx=canvas.getContext('2d');
+        ctx.font = " 2.9rem 微软雅黑";
+        ctx.fillStyle="black";
+        var text1="GARRARD珠宝赏鉴之约";
+        ctx.fillText(text1,198,50);
+        ctx.lineWidth=2;
+        ctx.moveTo(180,32);
+        ctx.lineTo(100,32);
+        ctx.lineTo(100,100);
+        ctx.lineTo(330,100);
+        ctx.strokeStyle="#9D9D9D";
+        ctx.stroke();
+        ctx.font = " 2.2rem 微软雅黑";
+        ctx.fillStyle="rgb(189,164,122)";
+        var text2="案例介绍";
+        ctx.fillText(text2,368,110);
+        ctx.moveTo(535,100);
+        ctx.lineTo(780,100);
+        ctx.lineTo(780,32);
+        ctx.lineTo(710,32);
+        ctx.strokeStyle="#9D9D9D";
+        ctx.stroke();
+    }
+</script>
+</html>

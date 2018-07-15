@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>联系</title>
+    <link type="text/css" rel="stylesheet" href="css/header.css">
+    <link type="text/css" rel="stylesheet" href="css/footer.css">
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+    <script src="layer-v3.1.1/layer-v3.1.1/layer/layer.js"></script>
+</head>
+<style>
+    #main{
+        width: 100%;
+        min-width: 1200px;
+    }
+    .content{
+        width: 1200px;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .left{
+        width: 30%;
+        margin-top: 150px;
+        float: left;
+    }
+    .left hr{
+        width: 8%;
+        display: inline-block;
+        background-color: #a1a1a1;
+        height: 1px;
+        border: none;
+        margin-left: 40px;
+    }
+    .left span{
+        font-family: 方正兰亭中黑;
+        font-size: 20px;
+        color: #a1a1a1;
+        margin-left: 25px;
+    }
+    .left p{
+        font-size: 16px;
+        /*font-family: FZLTXHK;*/
+        font-family: 微软雅黑;
+        color: black;
+        margin-left: 95px;
+    }
+    .left img{
+        width: 100%;
+        margin: 60px auto;
+        display: block;
+    }
+    .right{
+        float: right;
+        width:57%;
+        margin-top: 190px;
+    }
+    .right p{
+        font-size: 35px;
+        font-family: 方正兰亭中黑;
+        color: black;
+        margin: 40px 0;
+    }
+    .right span{
+        font-family: 方正兰亭中黑;
+        font-size: 15px;
+        color: #797979;
+        line-height: 30px;
+    }
+    .right input{
+        background-color: #EEEEEE;
+        border: none;
+        width: 100%;
+        height: 35px;
+        font-size: 18px;
+        padding: 5px 20px;
+        box-sizing: border-box;
+    }
+    .right label{
+        margin: 15px 0;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .right label:nth-child(2){
+        width: 48%;
+        display: inline-block;
+    }
+    .right label:nth-child(3){
+        width: 48%;
+        display: inline-block;
+        float: right;
+    }
+    .right textarea{
+        width: 100%;
+        display: block;
+        border: none;
+        background-color: #EEEEEE;
+        padding: 10px 18px;
+        box-sizing: border-box;
+        font-size: 20px;
+        height: 150px;
+    }
+    .right a{
+        width: 39%;
+        background-color: black;
+        color: white;
+        text-decoration: none;
+        display: block;
+        padding: 12px 25px;
+        text-align: center;
+        font-size: 18px;
+        font-family: 方正兰亭中黑;
+        margin: 60px 5px;
+    }
+    .right a:hover{
+        opacity: 0.9;
+        color: cornsilk;
+    }
+    #footer{
+        margin-top: 100px;
+    }
+    .left>div{
+        margin-bottom: 30px;
+    }
+    .left p:nth-child(3){
+        width: 50%;
+        line-height: 20px;
+    }
+    input,textarea{
+        outline: none;
+    }
+
+</style>
+<body>
+<div id="header">
+    <div class="nav">
+        <ul>
+            <li><a href="introduction.html">ABOUT</a></li>
+            <li><a href="case.html">SOLUTION</a></li>
+            <li><div><div><a href="index.html"><img src="images/logo.png"></a></div><div><a href="index.html"><img src="images/logo1.png"></a></div></div></li>
+            <li><a href="service.html">WORK</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </div>
+</div>
+<div id="main">
+    <div class="content">
+        <div class="left">
+            <div>
+                <hr><span>E-MAIL</span>
+                <p>ANNAO@WILBER.COM.CN</p>
+            </div>
+            <div>
+                <hr><span>TEL</span>
+                <p>15918483441</p>
+            </div>
+            <div>
+                <img src="images/6.01.jpg">
+            </div>
+            <div>
+                <hr><span>ADDERSS</span>
+                <p>广州市珠江新城江东路16号高德置地H座15层</p>
+            </div>
+        </div>
+        <div class="right">
+            <p>CONTACT US</p>
+            <div>
+                <label>
+                    <span>您的姓名</span>
+                    <input id="name">
+                </label>
+                <label>
+                    <span>您的邮箱</span>
+                    <input id="email">
+                </label>
+                <label>
+                    <span>您的电话</span>
+                    <input id="tell">
+                </label>
+                <label>
+                    <span>您的留言内容</span>
+                    <textarea id="message"></textarea>
+                </label>
+                <a href="javascript:check()" >提交</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="clear: both"></div>
+<div id="footer">
+    <div>
+        <img src="images/logo.png">
+    </div>
+</div>
+</body>
+<script>
+    function check() {
+        if($("#name").val() == ''){
+            layer.msg("姓名不能为空！");
+        }else if($("#email").val() == ''){
+            layer.msg("邮箱不能为空！");
+        }else if($("#tell").val() == ''){
+            layer.msg("电话号码不能为空！");
+        }else if($("#message").val() ==''){
+            layer.msg("请输入你的留言内容！");
+        }else {
+            layer.open({
+                type:1,
+                area:['400px','150px'],
+                shadeClose:true,
+                content:'\<div style="color: red;text-align: center;font-size: 30px;margin-top: 20px">数据已发送后台！\</div>'
+            });
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<style>
+    .test1{
+        width: 120px;
+        height: 20px;
+        display: block;
+        border-top: double 60px black;
+        border-bottom: solid 20px black;
+    }
+    .test2:hover{
+        transform: rotate(90deg);
+    }
+    .test2{
+        filter: grayscale(1) drop-shadow(100px 0 0 #56B4DC);
+    }
+    .test3{
+        color: #56B4DC;
+    }
+    .active{
+        color: red;
+    }
+</style>
+<body>
+<!--展开图标-->
+<a href="#" class="test1"></a>
+<!--图片灰度，图标交互换色（换色不可以将原图标隐藏，透明在边框）-->
+<div><img src="images/4.06.png" class="test2"></div>
+
+
+
+
+
+
+<div id="test3" class="test3" v-bind:class="{active:isActive}">
+    <p> {{ message }}</p>
+    <span >{{ daomessage}}</span>
+    <input v-model="message">
+    <ul>
+        <li v-for="n in evennumber">{{n}}</li>
+    </ul>
+</div>
+
+
+<div id="todo-list-example">
+    <input
+            v-model="newTodoText"
+            v-on:keyup.enter="addNewTodo"
+            placeholder="Add a todo"
+    >
+    <ul>
+        <li
+                is="todo-item"
+                v-for="(todo, index) in todos"
+                v-bind:key="todo.id"
+                v-bind:title="todo.title"
+                v-on:remove="todos.splice(index, 1)"
+        ></li>
+    </ul>
+</div>
+<div id="test4">
+    <input v-model="inputValue">    <button @click="handleSubmit">提交</button>
+    <ul>
+        <todolist v-for="(item,index) of list" :content="item" :index="index" @ddelete="handledelete"></todolist>
+    </ul>
+</div>
+</body>
+<script>
+    Vue.component("todolist",{
+        props:["content",'index'],
+        template:"<li @click='handledelete'>{{content}}</li>",
+        methods:{
+            handledelete:function (index) {
+                this.$emit("ddelete",this.index)
+            }
+        }
+    });
+    new Vue({
+        el:"#test4",
+        data:{
+            inputValue:"",
+            list:[],
+        },
+        methods:{
+            handleSubmit:function () {
+                this.list.push(this.inputValue)
+                this.inputValue=""
+            },
+            handledelete:function (index) {
+                this.list.splice(index,1)
+            }
+
+        }
+    });
+    var vs=new Vue({
+        el:"#test3",
+        data:{
+            message:"abcdef",
+            isActive:true,
+            number:[1,2,3,4,5,6,7,8,9]
+        },
+        computed:{
+            daomessage:function () {
+                return this.message.split("").reverse().join("")
+            },
+            evennumber:function () {
+                return this.number.filter(function (number) {
+                    return number %2 === 0;
+                })
+            }
+        }
+    })
+
+
+    Vue.component('todo-item', {
+        template: '\
+    <li>\
+      {{ title }}\
+      <button v-on:click="$emit(\'remove\')">X</button>\
+    </li>\
+  ',
+        props: ['title']
+    })
+
+    new Vue({
+        el: '#todo-list-example',
+        data: {
+            newTodoText: '',
+            todos: [
+                {
+                    id: 1,
+                    title: 'Do the dishes',
+                },
+                {
+                    id: 2,
+                    title: 'Take out the trash',
+                },
+                {
+                    id: 3,
+                    title: 'Mow the lawn'
+                }
+            ],
+            nextTodoId: 4
+        },
+        methods: {
+            addNewTodo: function () {
+                this.todos.push({
+                    id: this.nextTodoId++,
+                    title: this.newTodoText
+                })
+                this.newTodoText = ''
+            }
+        }
+    })
+</script>
+</html>

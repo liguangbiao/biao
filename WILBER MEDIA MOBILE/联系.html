@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>联系</title>
+    <meta name ="keywords" content="关键字">
+    <meta name ="description" content="网页描述">
+    <meta name ="robots" content="机器人引导">
+    <meta name ="author" content="作者">
+    <meta name="viewport" content="user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="css/header.css">
+    <link type="text/css" rel="stylesheet" href="css/banner.css">
+    <link type="text/css" rel="stylesheet" href="css/footer.css">
+    <link type="text/css" rel="stylesheet" href="css/cotact.css">
+    <link type="text/css" rel="stylesheet" href="css/layer-m.css">
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+    <script src="js/mobile/layer-m.js"></script>
+    <script src="js/nav.js"></script>
+</head>
+<body>
+<div id="header">
+    <span></span>
+    <img src="images/logo.png">
+    <div>
+        <a onclick="shownav()">
+            <img src="images/nav.png">
+        </a>
+        <ul class="nav">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="公司介绍.html">公司介绍</a></li>
+            <li><a href="服务.html">公司服务</a></li>
+            <li><a href="案例.html">公司案例</a></li>
+            <li><a href="案例内页.html">案例内页</a></li>
+            <li><a href="联系.html">联系我们</a></li>
+        </ul>
+    </div>
+</div>
+<div id="banner">
+    <div class="picture">
+        <img src="images/6.01.jpg">
+    </div>
+    <div class="title">
+        <div>
+            <span>“</span>
+            <p>CONTACT US</p>
+            <p>联系我们</p>
+            <p>WARM SERVICE</p>
+            <span>”</span>
+        </div>
+    </div>
+
+</div>
+<div id="main">
+    <div class="maintop">
+        <img src="images/6.02.jpg">
+        <div class="message">
+            <div>
+                <p><span>地址<br>&nbsp;</span><a>广州市珠江新城珠江东路<br>16号高德置地H座15层</a></p>
+                <p><span>热线</span><a>15918483441</a></p>
+                <p><span>邮箱<br>&nbsp;</span><a>annaou@wilber.com<br>.cn</a></p>
+            </div>
+            <div>
+                <img src="images/6.03.jpg">
+            </div>
+        </div>
+    </div>
+    <div class="fillform">
+        <canvas id="myCanvas" width="880"></canvas>
+        <input placeholder='您的姓名' id="name" onfocus="javascript:this.placeholder=''" onblur="javascript:this.placeholder='您的姓名'">
+        <input placeholder='您的电话' id="tell" onfocus="javascript:this.placeholder=''" onblur="javascript:this.placeholder='您的电话'">
+        <input placeholder='您的邮箱' id="email" onfocus="javascript:this.placeholder=''" onblur="javascript:this.placeholder='您的邮箱'">
+        <textarea placeholder='您的留言内容' rows="4" id="message" onfocus="javascript:this.placeholder=''" onblur="javascript:this.placeholder='您的留言内容'"></textarea>
+        <div><a href="javascript:check()">提交</a><a href="javascript:reset()">重置</a></div>
+    </div>
+</div>
+<div id="footer">
+    <div>
+        <img src="images/logo.png">
+        <div>
+            <p>地址：广州市珠江新城珠江东路16号高德置<br>&emsp;&emsp;&emsp;地H座15层</p>
+            <p>热线：15918483441</p>
+            <p>邮箱：ANNAOU@WILBER.COM.CN</p>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    window.onload=function (ev) {
+        var canvas=document.getElementById("myCanvas");
+        var ctx=canvas.getContext('2d');
+        ctx.font = " 2.9rem 微软雅黑";
+        ctx.fillStyle="black";
+        var text1="WILBER MEDIA";
+        ctx.fillText(text1,280,50);
+        ctx.lineWidth=2;
+        ctx.moveTo(180,32);
+        ctx.lineTo(100,32);
+        ctx.lineTo(100,100);
+        ctx.lineTo(330,100);
+        ctx.strokeStyle="#9D9D9D";
+        ctx.stroke();
+        ctx.font = " 2.2rem 微软雅黑";
+        ctx.fillStyle="rgb(189,164,122)";
+        var text2="填写资料";
+        ctx.fillText(text2,368,110);
+        ctx.moveTo(535,100);
+        ctx.lineTo(780,100);
+        ctx.lineTo(780,32);
+        ctx.lineTo(710,32);
+        ctx.strokeStyle="#9D9D9D";
+        ctx.stroke();
+    };
+    function check() {
+        if($("#name").val() == ''){
+            layer.open({
+                content: '请输入您的姓名！',
+                style: 'background-color:rgba(189,164,122,0.5); color:white; border:none;font-size:2rem;',
+                time:2
+            });
+            return false;
+        }
+        if($("#tell").val() == ''){
+            layer.open({
+                content: '电话号码不能为空！',
+                style: 'background-color:rgba(189,164,122,0.5); color:white; border:none;font-size:2rem;',
+                time:2
+            });
+            return false;
+        }
+        if($("#email").val() == ''){
+            layer.open({
+                content: '邮箱不能为空！',
+                style: 'background-color:rgba(189,164,122,0.5); color:white; border:none;font-size:2rem;',
+                time:2
+            });
+            return false;
+        }
+        if($("#message").val() ==''){
+            layer.open({
+                content: '请输入您的留言！',
+                style: 'background-color:rgba(189,164,122,0.5); color:white; border:none;font-size:2rem;',
+                time:2
+            });
+            return false;
+        }
+            layer.open({
+                content: '提交成功！',
+                style: 'background-color:rgba(189,164,122,0.5); color:white; border:none;font-size:2rem;',
+                time:2
+            });
+    }
+    function reset() {
+        $("#name").val("");
+        $("#tell").val("");
+        $("#email").val("");
+        $("#message").val("");
+    }
+</script>
+</html>

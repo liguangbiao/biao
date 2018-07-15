@@ -1,0 +1,73 @@
+#banner>canvas{
+    margin: 6.5rem 0;
+}
+#banner{
+    text-align: center;
+    margin: 0;
+}
+#main{
+    color: #5e5d5d;
+    font-size: 2rem;
+    padding: 0 2.2rem;
+    letter-spacing: 1px;
+    line-height: 4rem;
+}
+#main img{
+    width: 100%;
+    display: block;
+    background-color: white;
+    padding: 1rem;
+    border:rgb(189,164,122) 1px solid ;
+    box-sizing: border-box;
+}
+#main img:nth-child(2){
+    width: 100%;
+}
+#main p:nth-child(3){
+    font-size: 2.1rem;
+    width: 60%;
+    display: inline-block;
+    line-height: 4rem;
+}
+#main img:nth-child(4){
+    width: 38%;
+    display: inline-block;
+    position: relative;
+    right: 0;
+    vertical-align: top;
+    top:-5rem;
+    /*padding: 1.5rem;*/
+    /*background-color: white;*/
+    right: -1.3rem;
+}
+#main img:nth-child(5){
+    margin-top: -3rem;
+    margin-bottom: 2rem;
+}
+#main img:nth-child(7){
+    width: 38%;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    top: -4.5rem;
+    left: -1.2rem;
+}
+#main p:nth-child(8){
+    font-size: 2.1rem;
+    width: 60%;
+    line-height: 4rem;
+    margin:0.5rem 0 0 -1rem;
+    display: inline-block;
+}
+#main img:nth-child(9){
+}
+#footer{
+    margin-top: 8rem;
+}
+#main>p{
+    font-size: 0.9rem;
+    padding: 0 1.5rem 0 2.2rem;
+    line-height: 4.8rem;
+    box-sizing: border-box;
+    letter-spacing: 0.3rem;
+}

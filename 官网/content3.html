@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="css/header.css">
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/footer.css">
+</head>
+<style>
+    #content{
+        width: 1200px;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    #sidebar{
+        width: 260px;
+        float: left;
+    }
+    #firstnav{
+        padding: 0;
+        width: 260px;
+        font-size: 18px;
+        font-family: 黑体;
+    }
+    #firstnav>li>a{
+        color: #7d7878;
+        width: 260px;
+        display: inline-block;
+        box-sizing: border-box;
+    }
+    #firstnav li{
+        /*width: 100%;*/
+        line-height: 50px;
+        /*text-align: center;*/
+        /*border-bottom: #d2d0d0 1px solid;*/
+    }
+    #sidebar img{
+        vertical-align: middle;
+        margin: 0 10px 0 5px;
+    }
+    #firstnav>li:first-child{
+        text-align: left;
+        height: 55px;
+        border-bottom: #419e93 3px solid;
+        font-size: 20px;
+    }
+    #firstnav>li:first-child>a>img{
+        width: 32px;
+        height: 32px;
+    }
+    #firstnav>li:nth-child(n+2)>a{
+        padding-left: 40px;
+        text-align: left;
+        border-bottom: #d2d0d0 1px solid;
+    }
+    #firstnav>li:nth-child(n+2):hover {
+        background-color: #419e93;
+    }
+    #firstnav>li:nth-child(n+2):hover>a{
+        color: white;
+    }
+        /*#firstnav li:nth-child(4){*/
+        /*background-color:#419e93 ;*/
+    /*}*/
+    .secondnav1{
+        padding: 0;
+        font-size: 14px;
+        display: none;
+        /*visibility: hidden;*/
+    }
+    .secondnav1 li a{
+        color: #666969;
+        width: 260px;
+        height: 50px;
+        display: block;
+        padding-left: 85px;
+        box-sizing: border-box;
+        border-bottom: #d2d0d0 1px solid;
+    }
+    .secondnav1 li{
+        /*padding-left: 30px;*/
+        background-color: white;
+    }
+    .secondnav1 li:hover{
+        background-color:#4cbfb1;
+    }
+    .secondnav1 li a:hover{
+        color: white;
+    }
+
+    /*#firstnav>li:nth-child(n):hover .secondnav1{*/
+        /*display: block;*/
+    /*}*/
+    #main{
+        float: left;
+        width: 880px;
+        margin-left: 30px;
+    }
+    #main>span{
+        color: #727070;
+        font-size: 18px;
+        font-family: 微软雅黑;
+        margin: 25px 0 10px 5px;
+        display: block;
+    }
+    #mohu{
+        /*width: 870px;*/
+        /*height: 90px;*/
+        background-color: #2c2c2d;
+        background-color: rgba(0,0,0,.2);
+        position: absolute;
+        top:304px;
+    }
+    #mohu a{
+        width: 870px;
+        height: 80px;
+        display: block;
+    }
+    .p1{
+        font-family: "微软雅黑 Light";
+        font-size: 26px;
+        text-indent: 1em;
+        margin: 10px 0 12px 0 ;
+        color: white;
+        padding: 0;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    #mohu span{
+        width: 95%;
+        display: block;
+        font-size: 15px;
+        padding-left: 1.5em;
+        color: white;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    #articlelist{
+        width:880px;
+        padding: 10px 0 10px 0;
+        margin-top: 30px;
+    }
+    #articlelist li{
+        border-top: #f4f4f9 1px solid;
+        padding: 0 0 20px 0;
+        position: relative;
+    }
+    .p2{
+        padding: 0 10px;
+        width: 72%;
+        line-height: 28px;
+        font-family: "微软雅黑";
+        margin-top: 20px;
+        display: inline-block;
+    }
+    .p2 label{
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 640px;
+        display: block;
+    }
+    .p2 p{
+        margin: 10px 0;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient:vertical;
+        -webkit-line-clamp:3;
+    }
+    .p2 span{
+        width: 640px;
+        display: block;
+        margin-left: 0;
+        font-family: "微软雅黑";
+        font-size: 25px;
+        color: #9e161a;
+        line-height: 30px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .page{
+        margin: 30px 40px;
+        float: right;
+    }
+    .page a{
+        letter-spacing: 2px;
+        font-family: 微软雅黑;
+        text-align: center;
+        font-size: 17px;
+        color: #646464;
+        padding: 6px 8px 6px 8px;
+        margin: 5px;
+        /*background-color: white;*/
+        border: #9a9898 1px solid;
+        border-radius: 6px;
+    }
+    .page a:hover{
+        background-color: #419e93;
+        color: white;
+        border-color:#419e93 ;
+    }
+     .active3{
+        background-color: #419e93;
+        color: white;
+        border-color:#419e93;
+    }
+    #banner{
+        z-index: 999;
+    }
+    .banner2{
+        box-sizing: border-box;
+        width: 150px;
+        height: 370px;
+        background-color: #419e93;
+        position: fixed;
+        right: 0;
+        text-align: center;
+        padding: 12px;
+        top:25%;
+    }
+    .banner1{
+        box-sizing: border-box;
+        width: 150px;
+        height: 180px;
+        background-color: #419e93;
+        position: fixed;
+        right: -115px;
+        text-align: center;
+        padding: 12px;
+        top:40%;
+        border-radius: 12px;
+
+    }
+    #banner span{
+        display: block;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+    #banner img{
+        margin-top: 10px;
+    }
+    .inline{
+        display: inline-block;
+        width: 188px;
+        height: 143px;
+        padding: 7px;
+        vertical-align: top;
+        margin-top: 20px;
+        border: #eeeeea 1px solid;
+    }
+    .inline img{
+        width: 100%;
+    }
+    #bannerbutton{
+        height: 160px;
+        width: 6px;
+        display: block;
+        position: absolute;
+        line-height: 36px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        color: white;
+    }
+    #firstnav img:nth-child(n+1){
+        width: 25px;
+        height: 25px;
+    }
+    #articlelist a{
+        color: #666969;
+        display: block;
+    }
+    #banner span{
+        color: white;
+        margin: 0;
+    }
+    #banner span:nth-child(3){
+        font-size: 10px;
+    }
+    #banner hr{
+        width: 60%;
+    }
+    .active{
+        background-color:#4cbfb1;
+        color: white;
+    }
+    .active1{
+        background-color: #419e93;
+        color: white;
+    }
+    .active2{
+        background-color: #5d9fa8;
+    }
+    #main>span:first-child>a{
+        color: #727070;
+    }
+    #bannerbutton>img{
+        width: 22px;
+        height: 22px;
+        position: relative;
+        left: -2px;
+        top: -9px;
+    }
+</style>
+<body>
+<div id="header">
+    <div id="logo">
+        <img src="images/logo.png" style="vertical-align: bottom">
+        <span>致力于IT软件专才培养<br>高端就业服务导向</span>
+        <div class="search"><i class="icon"></i><input type="text" placeholder="请输入你要搜索的关键词"><input type="button" value="搜索"></div>
+    </div>
+    <div class="nav">
+        <ul>
+            <li><a href="javascript:">首页</a></li>
+            <li><a href="javascript:">机构概况</a>
+                <ul class="secondnav">
+                    <li><a href="javascript:" rel="1">教学公告</a></li>
+                    <li><a href="javascript:" rel="2">师资介绍</a></li>
+                    <li><a href="javascript:" rel="3">学员活动</a></li>
+                </ul></li>
+            <li><a href="javascript:">招生简章</a>
+                <ul class="secondnav">
+                    <li><a href="javascript:" rel="4">教学公告</a></li>
+                    <li><a href="javascript:" rel="5">师资介绍</a></li>
+                    <li><a href="javascript:" rel="6">学员活动</a></li>
+                </ul></li>
+            <li><a href="javascript:">教学管理</a>
+                <ul class="secondnav">
+                    <li><a href="javascript:" rel="7">教学公告</a></li>
+                    <li><a href="javascript:" rel="8">师资介绍</a></li>
+                    <li><a href="javascript:" rel="9">学员活动</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:">联系我们</a>
+                <ul class="secondnav">
+                    <li><a href="javascript:" rel="10">教学公告</a></li>
+                    <li><a href="javascript:" rel="11">师资介绍</a></li>
+                    <li><a href="javascript:" rel="12">学员活动</a></li>
+                </ul></li>
+        </ul>
+    </div>
+</div>
+<div id="content">
+    <div id="sidebar">
+        <ul id="firstnav">
+            <li><a><img src="images/3.01.png">栏目菜单</a></li>
+            <li><a href="javascript:"><img src="images/机构.png">机构概况</a>
+                <ul class="secondnav1">
+                    <li><a href="javascript:" id="menu_1">教学公告</a></li>
+                    <li><a href="javascript:" id="menu_2">师资介绍</a></li>
+                    <li><a href="javascript:" id="menu_3">学员活动</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:"><img src="images/招生.png">招生简章</a>
+                <ul class="secondnav1">
+                    <li><a href="javascript:" id="menu_4">教学公告</a></li>
+                    <li><a href="javascript:" id="menu_5">师资介绍</a></li>
+                    <li><a href="javascript:" id="menu_6">学员活动</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:"><img src="images/教学.png">教学管理</a>
+                <ul class="secondnav1">
+                    <li><a href="javascript:" id="menu_7">教学公告</a></li>
+                    <li><a href="javascript:" id="menu_8">师资介绍</a></li>
+                    <li><a href="javascript:" id="menu_9">学员活动</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:"><img src="images/联系.png">联系我们</a>
+                <ul class="secondnav1">
+                    <li><a href="javascript:" id="menu_10">教学公告</a></li>
+                    <li><a href="javascript:" id="menu_11">师资介绍</a></li>
+                    <li><a href="javascript:" id="menu_12">学员活动</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div id="main">
+        <span>你的位置：<a href="javascript:">网站首页</a><span> > </span><a href="javascript:">招生简章</a></span>
+        <ul id="articlelist">
+            <li>
+                <div>
+                    <img src="images/3.06.jpg" width="870px">
+                    <div id="mohu">
+                        <a href="javascript:">
+                            <p class="p1">2018工程大MBA招生简章</p>
+                            <span>武汉工程大学工商管理硕士研究生招生简章 MBA在职学历学位教育 武汉工程大学（原武汉化工学...</span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="javascript:">
+                <div class="inline"><img src="images/3.07.jpg"></div>
+                <div class="p2">
+                    <span>2018MPA.cc招生简章</span>
+                    <p>MPA.cc会计硕士研究生招生简章 管理学院位居全国高校管理学院百强44位，管理科学与工程专业位居全国
+                    第22位,工程管理专业位居全国11位,具备EMBA（高级工商管理硕士）培养资质。学院拥有10个硕士点，6个
+                    博士...</p>
+                    <label>作者：晟威教育中心 日期：2017.5.24</label>
+                </div>
+            </a></li>
+            <li><a href="javascript:">
+                <div class="inline"><img src="images/3.07.jpg"></div>
+                <div class="p2">
+                    <span>2018湖工大MBA招生简章</span>
+                    <p>湖北工业大学工商管理硕士研究生招生简章MBA在职学历学位教育湖北工业大学坐落武昌南湖，占地面积
+                    1675亩，是一所具有60余年历史的省属一本重点多科性大学，被湖北省委省政府定位为“在湖北省高教体系
+                    中起龙头示范作用...</p>
+                    <label>作者：晟威教育中心 日期：2017.3.22</label>
+                </div>
+            </a></li>
+            <li><a href="javascript:">
+                <div class="inline"><img src="images/3.07.jpg"></div>
+                <div class="p2">
+                    <span>2018南华MBA招生简章</span>
+                    <p>南华大学工商管理硕士研究生招生简章MBA在职学历学位教育南华大学是由工业和信息化部、国家国防科技
+                    工业局、中国核工业集团公司、中国核工业建设集团公司与湖南省人民政府共建，具有58年办学历史的综合
+                    大学。学校由原...</p>
+                    <label>作者：晟威教育中心 日期：2017.2.11</label>
+                </div>
+            </a></li>
+        </ul>
+        <div class="page">
+            <a href="javascript:">上一页</a><a href="javascript:">1</a><a href="javascript:">2</a><a href="javascript:">3</a><b>...</b><a href="javascript:">8</a><a href="javascript:">下一页</a>
+        </div>
+    </div>
+</div>
+<div id="banner" class="banner1">
+    <a id="bannerbutton">联系我们<img src="images/展开.png"></a>
+    <a href="javascript:"><img src="images/logoqq.png"><span>在线咨询</span></a>
+    <a href="javascript:"><img src="images/3.09.png"><span>返回顶部</span></a>
+    <img src="images/3.10.jpg"><span>微信扫一扫<br><hr><span>400-600-3738</span></span>
+</div>
+<div style="clear: both"></div>
+<div id="footer">
+    <div class="calllist">
+        <div id="f1"><a href="javascript:"> <p>客服热线</p><img src="images/logoph.png"><br><span>400-600-3738</span></a></div>
+        <div id="f2"><a href="javascript:"><p>关注我们</p><span>微信公众号</span><img src="images/logovx.png"><img src="images/logovx1.png" style="margin-left: 50px"></a></div>
+        <div id="f3"><a href="javascript:"><p>在线咨询</p><img src="images/logoqq.png"><br><span>1350707</span></a></div>
+    </div>
+    <ul class="footlist">
+        <li><a href="javascript:">首  页</a></li>
+        <li><a href="javascript:">关于晟威</a></li>
+        <li><a href="javascript:">培训课程</a></li>
+        <li><a href="javascript:">在线咨询</a></li>
+    </ul>
+</div>
+</body>
+<script>
+    window.onload=function () {
+        var t=window.location.search;
+        var arr=t.split("&");
+        for(var i=0;i<arr.length;i++){
+            var n=arr[i].search("id");
+            if(n!=-1){
+                var msg=arr[i].split("=");
+                getID(msg[1]);
+            }
+        }
+    };
+     function getID(id) {
+         $("#menu_"+id).parents(".secondnav1").show();
+         $("#menu_"+id).addClass("active1");
+         if($("#menu_"+id).hasClass("active1")){
+             $("#menu_"+id).css("color","white");
+         }
+         $("a[rel='"+id+"']").parent().parent().siblings("a").addClass("active");
+         $("a[rel='"+id+"']").addClass("active2");
+     }
+    $("#firstnav").children("li").children("a").click(function () {
+        $(this).parent("li").siblings().children(".secondnav1").hide();
+        $(this).siblings(".secondnav1").toggle();
+    });
+    $("#banner").mouseover(function () {
+        $(this).removeClass("banner1").addClass("banner2");
+        $("#bannerbutton").hide();
+    });
+    $("#banner").mouseleave(function () {
+        $(this).removeClass("banner2").addClass("banner1");
+        $("#bannerbutton").show();
+    });
+    $(".page").find("a").click(function () {
+        $(this).siblings().removeClass("active3");
+        $(this).siblings("a").css({"color":"#646464","border":"#9a9898 1px solid"});
+        $(this).addClass("active3");
+        $(this).css({"color":"white","border":"#419e93 1px solid"});
+    });
+    var lis=$("#firstnav").children("li");
+    lis.eq(1).mouseover(function () {
+        $(this).find("img").attr("src","images/机构1.png");
+    });
+    lis.eq(1).mouseleave(function () {
+        $(this).find("img").attr("src","images/机构.png");
+    });
+    lis.eq(2).mouseover(function () {
+        $(this).find("img").attr("src","images/招生1.png");
+    });
+    lis.eq(2).mouseleave(function () {
+        $(this).find("img").attr("src","images/招生.png");
+    });
+    lis.eq(3).mouseover(function () {
+        $(this).find("img").attr("src","images/教学1.png");
+    });
+    lis.eq(3).mouseleave(function () {
+        $(this).find("img").attr("src","images/教学.png");
+    });
+    lis.eq(4).mouseover(function () {
+        $(this).find("img").attr("src","images/联系1.png");
+    });
+    lis.eq(4).mouseleave(function () {
+        $(this).find("img").attr("src","images/联系.png");
+    });
+</script>
+</html>
